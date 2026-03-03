@@ -5,7 +5,7 @@ body.page-teaching { background-color: #fdfaea !important; padding-top: 0rem !im
 body.page-teaching .row, body.page-teaching .container, body.page-teaching .column { max-width: 100% !important; width: 100% !important; margin: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
 
 /* Header */
-.page-teaching .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important; }
+.page-teaching .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important; letter-spacing: .4em; }
 .page-teaching .s-header__nav a { color: #000 !important; }
 .page-teaching .s-header__nav a:hover { color: #000000 !important; }
 .page-teaching .s-header__nav a.smoothscroll[href="#teaching"] { color: #000000 !important; opacity: 1 !important; }

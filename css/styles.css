@@ -3229,7 +3229,7 @@ input::-moz-focus-inner {
     padding-bottom: 1.4rem;
     margin: 0;
     text-transform: uppercase; /*Font-style for the navigation bar*/
-    letter-spacing: .25em; /*For spacing between the navigation words*/
+    letter-spacing: .4em; /*For spacing between the navigation words*/
 }
 
 .s-header__nav a {
@@ -4168,17 +4168,17 @@ html.no-csstransitions .s-hero__content {
 
 /* 1. Increase the overall width of the container */
 .s-about .row {
-    max-width: 2000px !important; /* Increased from 1200px to allow spreading */
-    width: 100% !important;
     display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
     
-    /* CONTROL SPACING HERE: 
-       Lowering these numbers moves content closer to the screen edges.
-       6vw aligns it with your navigation links. */
-    padding-left: 6vw !important; 
-    padding-right: 0rem !important;
+    /* This calculates the mathematical center of the text column 
+       and places the image exactly in the middle of it. */
+    align-items: center !important; 
+    
+    justify-content: space-between !important;
+    max-width: 2000px !important;
+    width: 100% !important;
+    padding-left: 6vw !important;
+    padding-right: 0 !important;
 }
 
 /* 2. Adjust the split between Text and Image */
@@ -4188,16 +4188,15 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-about__photo-block {
-    flex: 1 !important; 
-    position: relative !important;
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important; /* Centers image horizontally */
+    align-items: center !important;     /* Centers image vertically inside its own box */
     
-    /* Remove 'top: 175px'. We reset it to 0 or auto */
+    /* Reset manual adjustments so Flexbox takes control */
+    margin-top: 0 !important; 
     top: auto !important; 
-    margin-top: 0 !important;
-    
-    display: flex;
-    justify-content: center !important; 
-    align-items: center !important;
+    position: relative !important;
 }
 
 /* 3. Make the Photo larger to fill the new space */
@@ -4261,7 +4260,7 @@ html.no-csstransitions .s-hero__content {
 
 .about-extra br.spaced {
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .college {

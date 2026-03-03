@@ -2,7 +2,7 @@
    FOCI PAGE SPECIFIC STYLES
    =================================================================== */
 body.page-foci { background-color: #fdfaea !important; padding-top: 14rem !important; }
-.page-foci .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important; }
+.page-foci .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important;  letter-spacing: .4em; /*For spacing between the navigation words*/}
 .page-foci .s-header__nav a { color: #000 !important; }
 .page-foci .s-header__nav a.smoothscroll[href="#top"] { color: #000000 !important; opacity: 1 !important; }
 .page-foci .s-header__right-text { display: flex !important; opacity: 1 !important; visibility: visible !important; color: #000 !important; padding-left: 2rem !important; }
@@ -31,10 +31,25 @@ body.page-foci { background-color: #fdfaea !important; padding-top: 14rem !impor
     font-weight: bolder;
 }
 
+.foci-page-desc-short {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    color: #000000;
+    margin: 1rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    line-height: 1.4 !important;
+}
+
 /* On Mobile, shrink it slightly so it doesn't wrap awkwardly */
 @media screen and (max-width: 600px) {
     .foci-page-title {
         font-size: 3.5rem;
+    }
+
+    .foci-page-desc-short {
+        font-size: 1.3rem;
     }
 }
 
@@ -56,13 +71,13 @@ body.page-foci { background-color: #fdfaea !important; padding-top: 14rem !impor
 
 /* Foci Arrow List */
 .foci-works ul.foci-list { list-style: none !important; padding: 0 !important; margin: 2rem 0 0 0 !important; color: #4d4d4d;}
-.foci-works ul.foci-list li { list-style-type: none !important; position: relative !important; padding-left: 2.2rem !important; margin-bottom: 1rem !important; background: none !important; display: block !important; font-size: 1.55rem; font-family: 'Noto Serif', serif; color: #383838; text-align: justify; line-height: 1.4;}
+.foci-works ul.foci-list li { list-style-type: none !important; position: relative !important; padding-left: 2.2rem !important; margin-bottom: 1rem !important; background: none !important; display: block !important; font-size: 1.4rem; font-family: 'Noto Serif', serif; color: #383838; text-align: justify; line-height: 1.4;}
 .foci-works ul.foci-list li a.college-foci { color: #4d4d4d !important; text-decoration: none; transition: all 0.3s ease; text-align: justify;}
 .foci-works ul.foci-list li a.college-foci:hover { text-decoration: underline; text-decoration-color: #4d4d4d; text-underline-offset: 4px; }
-.foci-works ul.foci-list li span { font-family: 'Noto Serif', serif; font-weight: 650; font-size: 1.55rem; color: #4d4d4d; }
-.foci-works ul.foci-list li::before { content: "\203A" !important; position: absolute !important; left: 0 !important; top: -1.05rem !important; color: #4d4d4d !important; font-size: 2.8rem !important; font-weight: bold !important; font-family: Arial, sans-serif !important; transition: all 0.3s ease; }
+.foci-works ul.foci-list li span { font-family: 'Noto Serif', serif; font-weight: 650; font-size: 1.4rem; color: #4d4d4d; }
+.foci-works ul.foci-list li::before { content: "\203A" !important; position: absolute !important; left: 0 !important; top: -1.2rem !important; color: #4d4d4d !important; font-size: 2.8rem !important; font-weight: bold !important; font-family: Arial, sans-serif !important; transition: all 0.3s ease; }
 .page-foci .foci-philosophy-line {
-    width: 30% !important;
+    width: 90% !important;
     height: 1px !important;
     background-color: #87bc6b !important;
     

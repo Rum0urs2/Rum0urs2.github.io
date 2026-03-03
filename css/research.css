@@ -4,7 +4,7 @@
 body.page-research { background-color: #fdfaea !important; padding-top: 14rem !important; }
 
 /* Header Fixes */
-.page-research .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important; }
+.page-research .s-header { background-color: #fff6c3 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 8.8rem !important; z-index: 1000 !important; visibility: visible !important; opacity: 1 !important; letter-spacing: .4em;}
 .page-research .s-header__nav a { color: #000000 !important; opacity: 0.8; }
 .page-research .s-header__nav a:hover { opacity: 1; color: #000000 !important; }
 .page-research .s-header__nav a.smoothscroll[href="#research-publications"] { color: #000000 !important; opacity: 1 !important; }

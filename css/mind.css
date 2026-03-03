@@ -16,6 +16,7 @@ body.page-mind { background-color: #fdfaea !important; padding-top: 10rem !impor
     z-index: 1000 !important; 
     visibility: visible !important; 
     opacity: 1 !important; 
+    letter-spacing: .4em;
 }
 
 /* 1. Force Navigation Links to Black */

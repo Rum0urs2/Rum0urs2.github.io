@@ -1856,3 +1856,84 @@ fieldset[disabled] .btn-theme {
     border-radius: 5px;
     color: #333;
 }
+
+/* Ensure the branding area doesn't have the standard header height */
+.header .logo {
+    display: none; /* Hide the old logo structure */
+}
+
+/* Override template defaults */
+.header .navbar-nav {
+    display: flex !important;
+    justify-content: center !important;
+    float: none !important;
+}
+
+.header .navbar-nav > li {
+    float: none !important;
+}
+
+.header .navbar-nav > li > a {
+    padding: 10px 20px !important;
+    color: #fff !important;
+}
+
+/* Fix for the Hero image shift */
+body {
+    padding-top: 140px !important; /* Increase if your header is still covering the text */
+}
+
+/* Hide the old logo/toggle that was in the template */
+.header .menu-container {
+    display: none !important;
+}
+
+/* Styling for the View All button */
+#products .btn-white-bg {
+    background: #003366; /* Matching your navy blue academic theme */
+    color: #fff;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+#products .btn-white-bg:hover {
+    background: #0055aa;
+    color: #fff;
+}
+
+/* Card Styling for Publication Page */
+.publication-card {
+    background: #f8fbff; /* Very soft light blue */
+    border: 1px solid #e1e1e1;
+    border-left: 5px solid #003366; /* Academic accent */
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.publication-card h3 {
+    color: #003366;
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.publication-card p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.publication-card .btn-theme {
+    margin-top: 15px;
+    background: #003366;
+    color: #fff;
+    padding: 8px 20px;
+}

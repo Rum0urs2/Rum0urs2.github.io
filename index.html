@@ -22,54 +22,28 @@
   
     <body id="body" data-spy="scroll" data-target=".header">
 
-          <header class="header navbar-fixed-top">
-              <nav class="navbar" role="navigation">
-                <div class="container">
-                      <div class="menu-container js_nav-item">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
-                        </button>
+        <header class="header navbar-fixed-top" style="background: #003366; padding: 15px 0 0 0;">
+            <!-- Top Branding -->
+            <div class="container text-center" style="margin-bottom: 10px;">
+                <h2 style="color: #fff; margin: 0; font-size: 26px; font-weight: 700; letter-spacing: 1px;">DST CENTRE OF EXCELLENCE FOR CLIMATE INFORMATION</h2>
+                <p style="color: #ddd; margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">Indian Institute of Technology Delhi</p>
+            </div>
 
-                          <div class="logo">
-                            <a class="logo-wrap" href="#body">
-                                <strong class="title">
-                                    DST Center of Excellence for Climate Information
-                                </strong> 
-                                <br>
-                                Indian Institute of Technology Delhi
-                                <!-- <img class="logo-img logo-img-main" src="img/logo.png" alt="FlameOnePage Logo"> -->
-                                <!-- <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="FlameOnePage Dark Logo"> -->
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="collapse navbar-collapse nav-collapse">
-					
-					<!--div class="language-switcher">
-					  <ul class="nav-lang">
-                        <li><a class="active" href="#">EN</a></li>
-					    <li><a href="#">DE</a></li>
-						<li><a href="#">FR</a></li>
-					  </ul>
-					</div---> 
-					
-                        <div class="menu-container">
-                            <ul class="nav navbar-nav navbar-nav-right">
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Home</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">About</a></li>
-								<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#services">Research</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#products">Publications</a></li>
-								<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Leadership</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#pricing">Advisors</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#opportunities">Opportunities</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-			</header>
+            <!-- Navigation -->
+            <div class="container" style="background: rgba(255,255,255,0.05);">
+                <nav class="navbar" style="margin-bottom: 0; border: none; min-height: 40px;">
+                    <ul class="nav navbar-nav" style="display: flex; justify-content: center; float: none;">
+                        <li><a href="#about" style="color: #fff; font-weight: 600;">About</a></li>
+                        <li><a href="#services" style="color: #fff; font-weight: 600;">Research</a></li>
+                        <li><a href="#products" style="color: #fff; font-weight: 600;">Publications</a></li>
+                        <li><a href="#work" style="color: #fff; font-weight: 600;">Leadership</a></li>
+                        <li><a href="#pricing" style="color: #fff; font-weight: 600;">Advisors</a></li>
+                        <li><a href="#opportunities" style="color: #fff; font-weight: 600;">Opportunities</a></li>
+                        <li><a href="#contact" style="color: #fff; font-weight: 600;">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
        
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- <div class="container">
@@ -92,39 +66,55 @@
                     </div>
                 </div>
             </div>
-            <div class="wave-bottom">
+            <!-- <div class="wave-bottom">
                 <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                     <path d="M0,64L80,74.7C160,85,320,107,480,101.3C640,96,800,64,960,53.3C1120,43,1280,53,1360,58.7L1440,64L1440,121L1360,121C1280,121,1120,121,960,121C800,121,640,121,480,121C320,121,160,121,80,121L0,121Z" fill="#ffffff"></path>
                 </svg>
-            </div>
+            </div> -->
         </div>
         <!--========== SLIDER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
         <!-- About -->
-        <div id="about">
-            <div class="content-lg container">
-                <div class="row">
-                    <!-- Left Column: The Image with a Link -->
-                    <div class="col-sm-6">
-                        <a href="https://your-target-url.com" target="_blank">
-                            <img class="full-width img-responsive wow fadeInUp" src="img/your-image.jpg" alt="About the Centre" data-wow-duration=".3" data-wow-delay=".2s">
-                        </a>
-                    </div>
-                    
-                    <!-- Right Column: The Text -->
-                    <div class="col-sm-6">
-                        <h2>About Us</h2>
-                        <p>
-                            The current state of our planet—marked by rapid climate change and increasingly evident global warming—is one of the most pressing concerns facing humanity today. <br>
+        <div id="about" class="content-lg container">
+            <!-- Header row: Centered and above the content -->
+            <div class="row margin-b-40 text-center">
+                <div class="col-sm-12">
+                    <h2 style="color: #003366; font-size: 36px;">About Us</h2>
+                </div>
+            </div>
 
-                            As a young and developing nation, India stands at a critical juncture, balancing its aspirations for rapid economic growth with the urgent need for environmental sustainability. The goal of becoming a five-trillion-dollar economy by the late 2020s, and progressing toward a ten-trillion-dollar economy by 2032, will require transformative reforms in regulations, labour laws, privatization of public enterprises, and massive investments in infrastructure. However, it is essential that this growth is not achieved at the cost of our climate. Striking this balance is a complex challenge—one that demands coordinated efforts from both public and private sectors. <br>
- 
-                            In this context, the DST Centre of Excellence in Climate Modeling was established at IIT Delhi in 2017 with support from the Department of Science and Technology, Government of India. The Centre was conceived to address critical climate challenges facing India and the surrounding region. <br>
+            <!-- Content row: Image and Text -->
+            <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                <!-- Left: Image -->
+                <div class="col-sm-5">
+                    <img src="img/your-image.jpg" class="img-responsive" style="border-radius: 8px; width: 100%;">
+                </div>
+                
+                <!-- Right: Text -->
+                <div class="col-sm-7">
+                    <p style="font-size: 16px; line-height: 1.8; color: #515769; text-align: justify;">
+                        The current state of our planet—marked by rapid climate change and increasingly evident global warming—is one of the most 
+                        pressing concerns facing humanity today. <br>
 
-                            Over time, the scope of the Centre has expanded. Today, it serves as a Centre of Excellence for Climate Information, focused on generating actionable intelligence to combat climate change and global warming, while advancing our understanding of the complex climate system. Our team is uniquely interdisciplinary, comprising faculty and students from atmospheric and oceanic sciences, fluid mechanics and heat transfer, artificial intelligence and machine learning, optimization and operations research, sequential decision-making, and economics and business administration. This diverse expertise allows us to approach climate change not as a problem confined to one domain, but as a multifaceted challenge requiring integrated solutions. 
-                        </p>
-                    </div>
+                        As a young and developing nation, India stands at a critical juncture, balancing its aspirations for rapid economic 
+                        growth with the urgent need for environmental sustainability. The goal of becoming a five-trillion-dollar economy by the late 2020s, 
+                        and progressing toward a ten-trillion-dollar economy by 2032, will require transformative reforms in regulations, labour laws, 
+                        privatization of public enterprises, and massive investments in infrastructure. However, it is essential that this growth is not achieved 
+                        at the cost of our climate. Striking this balance is a complex challenge—one that demands coordinated efforts from both public and 
+                        private sectors. <br>
+
+                        In this context, the DST Centre of Excellence in Climate Modeling was established at IIT Delhi in 2017 with support from the 
+                        Department of Science and Technology, Government of India. The Centre was conceived to address critical climate challenges facing India 
+                        and the surrounding region. <br>
+
+                        Over time, the scope of the Centre has expanded. Today, it serves as a Centre of Excellence for Climate Information, 
+                        focused on generating actionable intelligence to combat climate change and global warming, while advancing our understanding of the 
+                        complex climate system. Our team is uniquely interdisciplinary, comprising faculty and students from atmospheric and oceanic sciences, 
+                        fluid mechanics and heat transfer, artificial intelligence and machine learning, optimization and operations research, 
+                        sequential decision-making, and economics and business administration. This diverse expertise allows us to approach climate change 
+                        not as a problem confined to one domain, but as a multifaceted challenge requiring integrated solutions. 
+                    </p>
                 </div>
             </div>
         </div>
@@ -214,10 +204,6 @@
             <!-- Carousel Component -->
             <div id="highlightCarousel" class="carousel slide" data-ride="carousel" style="background: #d1ecf1; padding: 30px; border-radius: 10px;">
                 <!-- Indicators (Optional dots) -->
-                <ol class="carousel-indicators">
-                    <li data-target="#highlightCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#highlightCarousel" data-slide-to="1"></li>
-                </ol>
 
                 <div class="carousel-inner">
                     <!-- Slide 1 -->
@@ -225,21 +211,135 @@
                         <div class="row" style="display: flex; align-items: center; padding: 20px;">
                             <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
                             <div class="col-sm-7">
-                                <h3>Future projections for Antarctica</h3>
-                                <p>Detailed description of your research here. It involves analyzing 87 global climate models...</p>
-                                <a href="#">Read Full Paper</a>
+                                <h3>A Chronicle of the CoE's Journey</h3>
+                                <p>
+                                    This paper documents the motivation, evolution, and milestones of the CoE through the development of the SARCI framework for 
+                                    actionable climate information and regional capacity building in South Asia. 
+                                </p>
+                                <p>
+                                    Early online release is available.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
-                    <div class="item">
+                    <!-- Slide 1 -->
+                    <div class="item active">
                         <div class="row" style="display: flex; align-items: center; padding: 20px;">
-                            <div class="col-sm-5"><img src="img/climate-model.jpg" class="img-responsive"></div>
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
                             <div class="col-sm-7">
-                                <h3>Next Research Highlight Title</h3>
-                                <p>Description of the second research highlight goes here...</p>
-                                <a href="#">Read Full Paper</a>
+                                <h3>To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks</h3>
+                                <p>
+                                    North India’s air pollution crisis runs far deeper than stubble burning or fireworks, it stems from the Indo-Gangetic Plain’s bowl-shaped 
+                                    geography, rapid industrialization, and stagnant winter air that traps pollutants across borders. 
+                                    With climate change and industrial shifts like the “China Plus One“ strategy poised to intensify the problem, 
+                                    the study calls for bold, science-led reforms: integrating climate data into industrial planning, 
+                                    incentivizing relocation from vulnerable zones, and transforming the region from an unsustainable industrial corridor into a 
+                                    sustainable food corridor.
+                                <p>
+                                    Mishra, S. K., Upadhyaya, P., Arora, A., Vinod, A. J., Jayan, N., & Dwivedi, A. (2024). 
+                                    To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks. The India Forum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="row" style="display: flex; align-items: center; padding: 20px;">
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
+                            <div class="col-sm-7">
+                                <h3>Future projections of temperature and precipitation for Antarctica</h3>
+                                <p>
+                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. 
+                                    However, due to significant variability among climate models, the accuracy of these projections is questionable. 
+                                    This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                                </p>
+                                <p>
+                                    Tewari, K., Mishra, S. K., Salunke, P., & Dewan, A. (2022). 
+                                    Future projections of temperature and precipitation for Antarctica. 
+                                    Environmental Research Letters, 17(1), 014029.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="row" style="display: flex; align-items: center; padding: 20px;">
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
+                            <div class="col-sm-7">
+                                <h3>Future projections of temperature and precipitation for Antarctica</h3>
+                                <p>
+                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. 
+                                    However, due to significant variability among climate models, the accuracy of these projections is questionable. 
+                                    This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                                </p>
+                                <p>
+                                    Tewari, K., Mishra, S. K., Salunke, P., & Dewan, A. (2022). 
+                                    Future projections of temperature and precipitation for Antarctica. 
+                                    Environmental Research Letters, 17(1), 014029.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="row" style="display: flex; align-items: center; padding: 20px;">
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
+                            <div class="col-sm-7">
+                                <h3>Future projections of temperature and precipitation for Antarctica</h3>
+                                <p>
+                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. 
+                                    However, due to significant variability among climate models, the accuracy of these projections is questionable. 
+                                    This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                                </p>
+                                <p>
+                                    Tewari, K., Mishra, S. K., Salunke, P., & Dewan, A. (2022). 
+                                    Future projections of temperature and precipitation for Antarctica. 
+                                    Environmental Research Letters, 17(1), 014029.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="row" style="display: flex; align-items: center; padding: 20px;">
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
+                            <div class="col-sm-7">
+                                <h3>Future projections of temperature and precipitation for Antarctica</h3>
+                                <p>
+                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. 
+                                    However, due to significant variability among climate models, the accuracy of these projections is questionable. 
+                                    This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                                </p>
+                                <p>
+                                    Tewari, K., Mishra, S. K., Salunke, P., & Dewan, A. (2022). 
+                                    Future projections of temperature and precipitation for Antarctica. 
+                                    Environmental Research Letters, 17(1), 014029.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="row" style="display: flex; align-items: center; padding: 20px;">
+                            <div class="col-sm-5"><img src="img/antarctica.jpg" class="img-responsive"></div>
+                            <div class="col-sm-7">
+                                <h3>Future projections of temperature and precipitation for Antarctica</h3>
+                                <p>
+                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. 
+                                    However, due to significant variability among climate models, the accuracy of these projections is questionable. 
+                                    This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                                </p>
+                                <p>
+                                    Tewari, K., Mishra, S. K., Salunke, P., & Dewan, A. (2022). 
+                                    Future projections of temperature and precipitation for Antarctica. 
+                                    Environmental Research Letters, 17(1), 014029.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -287,6 +387,14 @@
 
                 </div>
             </div>
+            <!-- THIS IS THE "VIEW ALL" BUTTON -->
+            <div class="row text-center" style="margin-top: 30px;">
+                <div class="col-sm-12">
+                    <a href="publications.html" class="btn-theme btn-theme-sm btn-white-bg text-uppercase">
+                        View All Publications
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- Leadership Section -->
@@ -301,69 +409,69 @@
                 <!-- Profile 1 -->
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Amitabh BHATTACHARYA</h3>
+                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <a href="https://sites.google.com/site/amitabhresearch" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Tanmoy CHAKRABORTY</h3>
+                    <p>Department of Electrical Engineering, IIT Delhi</p>
+                    <a href="https://tanmoychak.com/" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Vamsi. K. CHALAMALLA</h3>
+                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <a href="https://sites.google.com/site/vkchalama/" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Amlendu K. DUBEY</h3>
+                    <p>Department of Management Studies, IIT Delhi</p>
+                    <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Saroj K. MISHRA</h3>
+                    <p>Centre for Atmospheric Sciences, IIT Delhi</p>
+                    <a href="https://dcecm.iitd.ac.in/skm/website/" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Prashant PALKAR</h3>
+                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <a href="https://mech.iitd.ac.in/faculty-profile/207" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Bijaya K. PANIGRAHI</h3>
+                    <p>Department of Electrical Engineering, IIT Delhi</p>
+                    <a href="https://ctech.iitd.ac.in/bkpanigrahi.html" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Maithali SHARAN</h3>
+                    <p>INSA Senior Scientist</p>
+                    <a href="https://web.iitd.ac.in/~mathilis/" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Shaurya SHRIYAM</h3>
+                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <a href="https://web.iitd.ac.in/~shriyam/index.html" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Sawan S. SINHA</h3>
+                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <a href="https://sites.google.com/view/sawanssinharesearchteaching/home" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="img/avatar.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
-                    <h3 style="margin-top: 20px;">Prof. Name</h3>
-                    <p>Head of Department / PI</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Email Profile</a>
+                    <h3 style="margin-top: 20px;">Prof. Amber SRIVASTAVA</h3>
+                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <a href="https://asrivastava93.github.io/index.html" class="link">Visit Profile</a>
                 </div>
             </div>
         </div>
@@ -381,80 +489,93 @@
                     <!-- Advisor 1 -->
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Swadhin BEHERA</h4>
+                            <p style="font-size: 13px; color: #777;">Director, Application Laboratory, JAMSTEC, Japan</p>
+                            <a href="https://www.jamstec.go.jp/apl/j/members/behera/" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>S. K. DASH</h4>
+                            <p style="font-size: 13px; color: #777;">Former Professor, IIT Delhi, India</p>
+                            <a href="https://web.iitd.ac.in/~skdash/" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>John FASULLO</h4>
+                            <p style="font-size: 13px; color: #777;">Scientist, NCAR, USA</p>
+                            <a href="https://staff.cgd.ucar.edu/fasullo/" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Serge GUILLAS</h4>
+                            <p style="font-size: 13px; color: #777;">Professor, UCL, UK</p>
+                            <a href="http://www.homepages.ucl.ac.uk/~ucaksgu/" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Ibrahim HOTEIT</h4>
+                            <p style="font-size: 13px; color: #777;">Professor, KAUST, Saudi Arabia</p>
+                            <a href="https://www.kaust.edu.sa/en/study/faculty/ibrahim-hoteit" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>In-Sik KANG</h4>
+                            <p style="font-size: 13px; color: #777;">Emeritus Professor, Seoul National University, South Korea</p>
+                            <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Sukumar MISHRA</h4>
+                            <p style="font-size: 13px; color: #777;">Director, IIT Dhanbad, India</p>
+                            <a href="https://iitdabudhabi.ac.ae/smishra" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Susheela NEGI</h4>
+                            <p style="font-size: 13px; color: #777;">Scientist, DST, India</p>
+                            <a href="https://dst.gov.in/whoswho/dr-susheela-negi" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Balaji RAJGOPALAN</h4>
+                            <p style="font-size: 13px; color: #777;">Professor, University of Colorado Boulder, USA</p>
+                            <a href="https://www.colorado.edu/even/rajagopalan-balaji-0" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Sandeep SAHANY</h4>
+                            <p style="font-size: 13px; color: #777;">Scientist, CCRS, Singapore</p>
+                            <a href="https://ccrs.weather.gov.sg/sandeep-sahany/" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Kalachand SAIN</h4>
+                            <p style="font-size: 13px; color: #777;">Former Director, WIHG, India</p>
+                            <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
+                            <h4>Frank SELTEN</h4>
                             <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <a href="https://www.knmi.nl/over-het-knmi/onze-mensen/frank-selten" class="link">Visit Profile</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 text-center margin-b-30">
                         <div style="background: #fff; padding: 20px; border-radius: 8px;">
-                            <h4>Dr. Advisor Name</h4>
-                            <p style="font-size: 13px; color: #777;">Senior Scientist, IIT Delhi</p>
+                            <h4>Joe TRIBBIA</h4>
+                            <p style="font-size: 13px; color: #777;">Scientist, NCAR, USA</p>
+                            <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
                         </div>
                     </div>
                 </div>

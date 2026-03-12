@@ -13,6 +13,7 @@
         <link href="index_files/animate.css" rel="stylesheet">
         <link href="index_files/layout.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
    
   
@@ -34,14 +35,14 @@
                         
                         <!-- Right: Sub Title -->
                         <div class="brand-text-sub">
-                            INDIAN INSTITUTE OF<br>TECHNOLOGY DELHI
+                            INDIAN INSTITUTE OF TECHNOLOGY DELHI
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom Row: Navigation (White Background) -->
-            <div class="nav-row" style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <div class="nav-row" style="background-color: #b0f7ff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                 <div class="container">
                     <nav class="navbar" style="margin: 0; border: none; min-height: auto;">
                         <ul class="nav navbar-nav">
@@ -58,30 +59,32 @@
             </div>
         </header>
        
+        <!-- ========== SLIDER ========== -->
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
-                <div class="item active full-screen" style="height: 543px; background-image: url(&quot;img/pexels-no-name-14543-66997.jpg&quot;);">
-                    <div class="container">
-                        <div class="carousel-centered">
-                            <div class="margin-b-40">
-                                <h1 class="carousel-title">To Write</h1>
-                                <p class="color-white">To Write</p>
-                            </div>
+                <div class="item active full-screen" style="height: 500px; background-image: url('img/pexels-no-name-14543-66997.jpg');">
+                    
+                    <!-- This container centers the text in the 'sky' area ABOVE the patch -->
+                    <div class="hero-centering-wrapper">
+                        <div class="container text-center">
+                            <h1 class="carousel-title"> Climate Change in South Asia — What, Why, and How? We Seek the Answers </h1>
+                            <!-- <p class="color-white" style="font-size: 1.2rem; letter-spacing: 4px;">To Write</p> -->
                         </div>
                     </div>
+
                 </div>
             </div>
-            <!-- CUSTOM ARC OVERLAY (Like UW site) -->
+
+            <!-- THE UW-STYLE SWOOP (Parallel lines, shifted lower) -->
             <div class="hero-arc-overlay">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250" preserveAspectRatio="none">
-                    <!-- Light Blue swooping accent layer -->
-                    <path fill="#e7f3fd" d="M0,0 C480,150 960,200 1440,200 L1440,250 L0,250 Z"></path>
-                    <!-- White solid base layer -->
-                    <path fill="#ffffff" d="M0,60 C480,180 960,230 1440,230 L1440,250 L0,250 Z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" preserveAspectRatio="none">
+                    <!-- Light Blue Stripe (Starts high at 300, drops to 420) -->
+                    <path fill="#b0f7ff" d="M0,360 C500,360 1000,480 1440,480 L1440,500 L0,500 Z"></path>
+                    <!-- White Layer (Starts at 330, drops to 450 -> Constant 30px Thickness) -->
+                    <path fill="#ffffff" d="M0,380 C500,380 1000,500 1440,500 L1440,500 L0,500 Z"></path>
                 </svg>
             </div>
         </div>
-        <!--========== SLIDER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
         <!-- About -->
@@ -213,173 +216,188 @@
         </div>
 
         <div id="research-highlights" class="content-lg container">
-            <div class="row margin-b-40 text-center">
-                <h2 style="color: #003366;">RESEARCH HIGHLIGHTS</h2>
-            </div>
+    <div class="row margin-b-40 text-center">
+        <h2 style="color: #003366;">RESEARCH HIGHLIGHTS</h2>
+    </div>
 
-            <!-- Carousel Component -->
-            <div id="highlightCarousel" class="carousel slide" data-ride="carousel" style="background: #d1ecf1; padding: 10px; border-radius: 10px;">
-                
-                <div class="carousel-inner">
-                    <!-- Slide 1 (ACTIVE) -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;https://images.unsplash.com/photo-1601134467661-3d775b999c1b?w=600&quot;);">
-                                
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">A Chronicle of the CoE's Journey</h3>
-                                <p>
-                                    This paper documents the motivation, evolution, and milestones of the CoE through the development of the SARCI framework for actionable climate information and regional capacity building in South Asia. 
-                                </p>
-                                <p>
-                                    Early online release is available.
-                                </p>
-                            </div>
+    <!-- Carousel Component -->
+    <div id="highlightCarousel" class="carousel slide" data-ride="carousel" style="background: #d1ecf1; border-radius: 15px;">
+        
+        <div class="carousel-inner">
+            
+            <!-- Slide 1 -->
+            <div class="item active">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/SARCI-WEB10.png" alt="Journey">
                         </div>
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5" style="background-image: url(&quot;img/antarctica.jpg&quot;);">
-                                
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks</h3>
-                                <p>
-                                    North India’s air pollution crisis runs far deeper than stubble burning or fireworks, it stems from the Indo-Gangetic Plain’s bowl-shaped geography, rapid industrialization, and stagnant winter air that traps pollutants across borders. With climate change and industrial shifts like the “China Plus One“ strategy poised to intensify the problem, the study calls for bold, science-led reforms: integrating climate data into industrial planning, incentivizing relocation from vulnerable zones, and transforming the region from an unsustainable industrial corridor into a sustainable food corridor.
-                                </p>
-                                <p>
-                                    Mishra, S. K., Upadhyaya, P., Arora, A., Vinod, A. J., Jayan, N., &amp; Dwivedi, A. (2024). 
-                                    To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks. The India Forum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;img/images/highlights_logo/1.webp&quot;);">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">An update to WRF surface layer parameterization</h3>
-                                <p>
-                                    Inadequate representation of surface-atmosphere interaction processes is a major source of uncertainty in numerical weather prediction models. Here, an effort has been made to improve the WRF model version 4.2.2 by introducing a unique theoretical framework suggested by Kader and Yaglom (1990) under convective conditions. In addition, to enhance the potential applicability of the WRF modeling system, various commonly used similarity functions under convective conditions have also been installed.
-                                </p>
-                                <p>
-                                    Namdev, P., Sharan, M., Srivastava, P., &amp; Mishra, S. K. (2024). 
-                                    An updated parameterization of the unstable atmospheric surface layer in the Weather Research and Forecasting (WRF) modeling system. 
-                                    Geoscientific Model Development, 17(22), 8093-8114.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;img/images/highlights_logo/2.webp&quot;);">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">A need for actionable climate projections across the Global South</h3>
-                                <p>
-                                    This study highlights the inconsistencies in the climate projections for precipitation and temperature from six generations of IPCC assessments for much of the Global south, which results in many challenges for climate change adaptation. It also discusses about the emerging technologies such as km-scale modeling, region-specific model customization, machine-learning and deep-learning approaches, constrained climate projections using observations as well as strengthening international collaborations to address these challenges.
-                                </p>
-                                <p>
-                                    Mishra, S. K., Upadhyaya, P., Fasullo, J. T., Keshri, N. P., Salunke, P., Ghosh, A., ... &amp; Kang, I. S. (2023). 
-                                    A need for actionable climate projections across the Global South. 
-                                    Nature Climate Change, 13(9), 883-886.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;img/images/highlights_logo/3.webp&quot;);">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">Impact of climate change on future malaria transmission in Odisha</h3>
-                                <p>
-                                    Numerous studies suggest that the climate change is likely to impact the distribution of various vector borne diseases such as malaria and dengue in higher altitudes and higher latitudes regions across the globe. This study evaluates the effects of climate change on future malaria transmission using the VECTRI model by forcing temperature and rainfall from a global climate model (CCSM4) over the state Odisha, India for the baseline period (1975-2005) and for the projection periods 2020s, 2050s, and 2080s under RCP8.5 emission scenario.
-                                </p>
-                                <p>
-                                    Parihar, R. S., Bal, P. K., Saini, A., Mishra, S. K., &amp; Thapliyal, A. (2022). 
-                                    Potential future malaria transmission in Odisha due to climate change. 
-                                    Scientific Reports, 12(1), 9048.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6 -->
-                    <div class="item full-screen active" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;img/images/highlights_logo/4.webp&quot;);">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">AI/ML models show promising results in predicting the All India Summer Monsoon Rainfall (AISMR) for 2023</h3>
-                                <p>
-                                    It is well-known that the Artificial Intelligence and Machine Learning (AI/ML) models can complement the existing physical models. In this study, the AI/ML models are employed to predict the All India Summer Monsoon Rainfall (AISMR) for 2023. The data driven models are trained with historical AISMR data, NiÃ±o3.4 index data and categorical IOD data, which show promising results.
-                                </p>
-                                <p>
-                                    Narang, U., Juneja, K., Upadhyaya, P., Salunke, P., Chakraborty, T., Behera, S. K., ... &amp; Suresh, A. D. (2024). 
-                                    Artificial intelligence predicts normal summer monsoon rainfall for India in 2023. 
-                                    Scientific Reports, 14(1), 1495.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 -->
-                    <div class="item full-screen" style="height: 543px;">
-                        <div class="row flex-row" style="padding: 20px;">
-                            <div class="col-sm-5">
-                                <div class="highlight-img-box" style="background-image: url(&quot;img/images/highlights_logo/5.webp&quot;);">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-7">
-                                <h3 style="margin-top: 0; color: #003366;">Future projections of temperature and precipitation for Antarctica</h3>
-                                <p>
-                                    Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. However, due to significant variability among climate models, the accuracy of these projections is questionable. This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
-                                </p>
-                                <p>
-                                    Tewari, K., Mishra, S. K., Salunke, P., &amp; Dewan, A. (2022). 
-                                    Future projections of temperature and precipitation for Antarctica. 
-                                    Environmental Research Letters, 17(1), 014029.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">A Chronicle of the CoE's Journey</h3>
+                        <p>
+                            This paper documents the motivation, evolution, and milestones of the CoE through the development of the SARCI framework for actionable climate information and regional capacity building in South Asia. 
+                        </p>
+                        <a href="https://journals.ametsoc.org/view/journals/bams/aop/BAMS-D-25-0172.1/BAMS-D-25-0172.1.xml" target="_blank">
+                        <p style="font-weight: 600;">Early online release is available.</p>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Arrow Controls -->
-                <a class="left carousel-control" href="#highlightCarousel" data-slide="prev" style="background: none; color: #003366; width: 5%;">
-                    <span class="glyphicon glyphicon-chevron-left" style="top: 50%; position: absolute; left: 50%; transform: translate(-50%, -50%);"></span>
-                </a>
-                <a class="right carousel-control" href="#highlightCarousel" data-slide="next" style="background: none; color: #003366; width: 5%;">
-                    <span class="glyphicon glyphicon-chevron-right" style="top: 50%; position: absolute; left: 50%; transform: translate(-50%, -50%);"></span>
-                </a>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="index_files/7.png" alt="Antarctica">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks</h3>
+                        <p>
+                            North India’s air pollution crisis runs far deeper than stubble burning or fireworks, it stems from the Indo-Gangetic Plain’s bowl-shaped geography, rapid industrialization, and stagnant winter air that traps pollutants across borders. With climate change and industrial shifts like the “China Plus One“ strategy poised to intensify the problem, the study calls for bold, science-led reforms: integrating climate data into industrial planning, incentivizing relocation from vulnerable zones, and transforming the region from an unsustainable industrial corridor into a sustainable food corridor.
+                        </p>
+                        <a href="https://www.theindiaforum.in/environment/solve-north-indias-air-crisis-look-beyond-stubble-and-fireworks-0" target="_blank">
+                        <p style="font-weight: 600;">
+                            Mishra, S. K., Upadhyaya, P., Arora, A., Vinod, A. J., Jayan, N., &amp; Dwivedi, A. (2024). 
+                            To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks. The India Forum.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/images/highlights_logo/1.webp" alt="WRF Update">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">An update to WRF surface layer parameterization</h3>
+                        <p>
+                            Inadequate representation of surface-atmosphere interaction processes is a major source of uncertainty in numerical weather prediction models. Here, an effort has been made to improve the WRF model version 4.2.2 by introducing a unique theoretical framework suggested by Kader and Yaglom (1990) under convective conditions. In addition, to enhance the potential applicability of the WRF modeling system, various commonly used similarity functions under convective conditions have also been installed.
+                        </p>
+                        <a href="https://gmd.copernicus.org/articles/17/8093/2024/" target="_blank">
+                        <p style="font-weight: 600;">
+                            Namdev, P., Sharan, M., Srivastava, P., &amp; Mishra, S. K. (2024). 
+                            An updated parameterization of the unstable atmospheric surface layer in the Weather Research and Forecasting (WRF) modeling system. 
+                            Geoscientific Model Development, 17(22), 8093-8114.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/images/highlights_logo/2.webp" alt="Global South">
+                        </div>
+                    </div>
+                    <div class="col-sm-7" >
+                        <h3 style="margin-top: 0; color: #003366;">A need for actionable climate projections across the Global South</h3>
+                        <p>
+                            This study highlights the inconsistencies in the climate projections for precipitation and temperature from six generations of IPCC assessments for much of the Global south, which results in many challenges for climate change adaptation. It also discusses about the emerging technologies such as km-scale modeling, region-specific model customization, machine-learning and deep-learning approaches, constrained climate projections using observations as well as strengthening international collaborations to address these challenges.
+                        </p>
+                        <a href="https://www.nature.com/articles/s41558-023-01778-2" target="_blank">
+                        <p style="font-weight: 600;" >
+                            Mishra, S. K., Upadhyaya, P., Fasullo, J. T., Keshri, N. P., Salunke, P., Ghosh, A., ... &amp; Kang, I. S. (2023). 
+                            A need for actionable climate projections across the Global South. 
+                            Nature Climate Change, 13(9), 883-886.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/images/highlights_logo/3.webp" alt="Malaria">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">Impact of climate change on future malaria transmission in Odisha</h3>
+                        <p>
+                            Numerous studies suggest that the climate change is likely to impact the distribution of various vector borne diseases such as malaria and dengue in higher altitudes and higher latitudes regions across the globe. This study evaluates the effects of climate change on future malaria transmission using the VECTRI model by forcing temperature and rainfall from a global climate model (CCSM4) over the state Odisha, India for the baseline period (1975-2005) and for the projection periods 2020s, 2050s, and 2080s under RCP8.5 emission scenario.
+                        </p>
+                        <a href="https://www.nature.com/articles/s41598-022-13166-5" target="_blank">
+                        <p style="font-weight: 600;">
+                            Parihar, R. S., Bal, P. K., Saini, A., Mishra, S. K., &amp; Thapliyal, A. (2022). 
+                            Potential future malaria transmission in Odisha due to climate change. 
+                            Scientific Reports, 12(1), 9048.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/images/highlights_logo/4.webp" alt="AI/ML Monsoon">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">AI/ML models show promising results in predicting the All India Summer Monsoon Rainfall (AISMR) for 2023</h3>
+                        <p>
+                            It is well-known that the Artificial Intelligence and Machine Learning (AI/ML) models can complement the existing physical models. In this study, the AI/ML models are employed to predict the All India Summer Monsoon Rainfall (AISMR) for 2023. The data driven models are trained with historical AISMR data, NiÃ±o3.4 index data and categorical IOD data, which show promising results.
+                        </p>
+                        <a href="https://www.nature.com/articles/s41598-023-44284-3" target="_blank">
+                        <p style="font-weight: 600;">
+                            Narang, U., Juneja, K., Upadhyaya, P., Salunke, P., Chakraborty, T., Behera, S. K., ... &amp; Suresh, A. D. (2024). 
+                            Artificial intelligence predicts normal summer monsoon rainfall for India in 2023. 
+                            Scientific Reports, 14(1), 1495.
+                        </p>
+                        </a>    
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="item">
+                <div class="row flex-row">
+                    <div class="col-sm-5">
+                        <div class="highlight-img-box">
+                            <img src="img/images/highlights_logo/5.webp" alt="Antarctica Projections">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 style="margin-top: 0; color: #003366;">Future projections of temperature and precipitation for Antarctica</h3>
+                        <p>
+                            Antarctica significantly affects over half of the global population living in coastal areas, making future climate projections crucial. However, due to significant variability among climate models, the accuracy of these projections is questionable. This study evaluated 87 global climate models from three major consortia (CMIP5, CMIP6, and NEX-GDDP) to assess their reliability.
+                        </p>
+                        <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ac43e2" target="_blank">
+                        <p style="font-weight: 600;">
+                            Tewari, K., Mishra, S. K., Salunke, P., &amp; Dewan, A. (2022). 
+                            Future projections of temperature and precipitation for Antarctica. 
+                            Environmental Research Letters, 17(1), 014029.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <a class="left carousel-control" href="#highlightCarousel" data-slide="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <a class="right carousel-control" href="#highlightCarousel" data-slide="next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+</div>
 
         <!-- Publications Section -->
         <div id="products" class="content-lg container">
@@ -392,23 +410,86 @@
                     
                     <!-- Publication Card 1 -->
                     <div class="publication-card">
-                        <h3>Evaluation of the two PBL Schemes in the NCAR-CAM5 Model...</h3>
+                        <h3>Evaluation of the two PBL Schemes in the NCAR-CAM5 Model over India and its Adjoining Regions: A Sensitivity to Critical Bulk Richardson Number.</h3>
                         <p>Namdev, P., M. Sharan, S. K. Mishra | 2026 | International Journal of Climatology (Accepted)</p>
                         <a href="#" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
                     </div>
 
                     <!-- Publication Card 2 -->
                     <div class="publication-card">
-                        <h3>Advancing Climate Services in South Asia: The SARCI Framework...</h3>
-                        <p>Bhuyan, D. P., P. Upadhyaya, R. Pathak, P. Namdev, et al. | 2026 | Bulletin of the American Meteorological Society</p>
-                        <a href="#" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                        <h3>Advancing Climate Services in South Asia: The SARCI Framework for Actionable Climate Information and Regional Capacity Building.</h3>
+                        <p>Bhuyan, D. P., P. Upadhyaya, R. Pathak, P. Namdev, P. Salunke, A. Anand, A. D. Suresh, A. Arora, S. K. Baraik, S. Jain, R. S. Parihar, A. Dwivedi, S. Sahany, M. Sharan, S. K. Dash, J. T. Fasullo, S. K. Behera, J. Tribbia, S. K. Mishra | 2026 | Bulletin of the American Meteorological Society</p>
+                        <a href="https://journals.ametsoc.org/view/journals/bams/aop/BAMS-D-25-0172.1/BAMS-D-25-0172.1.xml" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
                     </div>
 
                     <!-- Publication Card 3 -->
                     <div class="publication-card">
                         <h3>To Solve North India’s Air Crisis, Look Beyond Stubble and Fireworks.</h3>
-                        <p>Mishra, S. K., P. Upadhyaya, A. Arora, A. J. Vinod | 2025 | The India Forum</p>
-                        <a href="#" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                        <p>Mishra, S. K., P. Upadhyaya, A. Arora, A. J. Vinod, N. Jayan, A. Dwivedi | 2025 | The India Forum</p>
+                        <a href="https://www.theindiaforum.in/environment/solve-north-indias-air-crisis-look-beyond-stubble-and-fireworks-0" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 1 -->
+                    <div class="publication-card">
+                        <h3>Formulation of a dynamic convective adjustment time-scale in the CESM1.2 and its influence on the Indian summer monsoon simulations.</h3>
+                        <p>Pathak, R., S. Sahany, S. K. Mishra, J. Wang | 2025 | Scientific Reports</p>
+                        <a href="https://www.nature.com/articles/s41598-025-15073-x" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 2 -->
+                    <div class="publication-card">
+                        <h3>Exploring the Nexus of Climate Change and Vector-Borne Disease Transmission.</h3>
+                        <p>Baraik, S. K., R. S. Parihar, S. Sparrow, P. Salunke | 2025 | iScience</p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S2589004225020966" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 3 -->
+                    <div class="publication-card">
+                        <h3>Implementation of various non-linear similarity functions for stable atmospheric surface layer in the WRF modeling system: An evaluation for three contrasting nights in CASES-99 dataset. </h3>
+                        <p>Namdev, P., M. Sharan, S. K. Mishra | 2025 | Atmospheric Research</p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0169809524006070?via%3Dihub" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 1 -->
+                    <div class="publication-card">
+                        <h3>Optimizing WRF-Hydro Calibration in the Himalayan Basin: Precipitation Influence and Parameter Sensitivity Analysis.</h3>
+                        <p>Dixit, A., S. Sahany, S. K. Mishra, F. Lehner | 2025 | Journal of Hydrometeorology</p>
+                        <a href="https://journals.ametsoc.org/view/journals/hydr/26/3/JHM-D-24-0096.1.xml" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 2 -->
+                    <div class="publication-card">
+                        <h3>Implications of CMIP6 Models–Based Climate Biases and Runoff Sensitivity on Runoff Projection Uncertainties Over Central India.</h3>
+                        <p>Tyagi, S., S. Sahany, D. Saraswat, S. K. Mishra, A. Dubey, D. Niyogi | 2024 | International Journal of Climatology</p>
+                        <a href="https://rmets.onlinelibrary.wiley.com/doi/10.1002/joc.8661" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 3 -->
+                    <div class="publication-card">
+                        <h3>Attributing the recent weakening of the South Asian subtropical westerlies.</h3>
+                        <p>Upadhyaya, P., S. K. Mishra, J. T. Fasullo, In-Sik Kang | 2024 | npj Climate and Atmospheric Science</p>
+                        <a href="https://www.nature.com/articles/s41612-024-00777-0" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 1 -->
+                    <div class="publication-card">
+                        <h3>An Updated Parameterization of the Unstable Atmospheric Surface Layer in WRF Modeling System.</h3>
+                        <p>Namdev, P., M. Sharan, P. Srivastava, and S. K. Mishra | 2024 | Geoscientific Model Development</p>
+                        <a href="https://gmd.copernicus.org/articles/17/8093/2024/" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 2 -->
+                    <div class="publication-card">
+                        <h3>On the Extent of Applicability of Various Non-Linear Similarity Functions for Computation of Surface Fluxes Under Stable Conditions in Numerical Models.</h3>
+                        <p>Namdev, P., M. Sharan, and S. K. Mishra | 2024 | Boundary Layer Meteorology</p>
+                        <a href="https://link.springer.com/article/10.1007/s10546-024-00869-7" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
+                    </div>
+
+                    <!-- Publication Card 3 -->
+                    <div class="publication-card">
+                        <h3>Assessing Regional-Scale Heterogeneity in Blue-Green Water Availability under the 1.5°C Global Warming Scenario.</h3>
+                        <p>Tyagi, S., S. Sahany, D. Saraswat, S. K. Mishra, A. Dubey, and D. Niyogi | 2024 | Journal of Applied Meteorology and Climatology</p>
+                        <a href="https://journals.ametsoc.org/view/journals/apme/63/4/JAMC-D-23-0083.1.xml" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Read More</a>
                     </div>
 
                 </div>
@@ -436,67 +517,67 @@
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/amitabh.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Amitabh BHATTACHARYA</h3>
-                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Applied Mechanics, IIT Delhi</p>
                     <a href="https://sites.google.com/site/amitabhresearch" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/tanmoy.png" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Tanmoy CHAKRABORTY</h3>
-                    <p>Department of Electrical Engineering, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Electrical Engineering, IIT Delhi</p>
                     <a href="https://tanmoychak.com/" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/vamsi.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Vamsi. K. CHALAMALLA</h3>
-                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Applied Mechanics, IIT Delhi</p>
                     <a href="https://sites.google.com/site/vkchalama/" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/amlendu_d.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Amlendu K. DUBEY</h3>
-                    <p>Department of Management Studies, IIT Delhi</p>
-                    <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
+                    <p style="margin-bottom: 0.5rem">Department of Management Studies, IIT Delhi</p>
+                    <a href="" class="link">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/saroj.png" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Saroj K. MISHRA</h3>
-                    <p>Centre for Atmospheric Sciences, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Centre for Atmospheric Sciences, IIT Delhi</p>
                     <a href="https://dcecm.iitd.ac.in/skm/website/" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/prashant.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Prashant PALKAR</h3>
-                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Mechanical Engineering, IIT Delhi</p>
                     <a href="https://mech.iitd.ac.in/faculty-profile/207" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/panigrahi1.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Bijaya K. PANIGRAHI</h3>
-                    <p>Department of Electrical Engineering, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Electrical Engineering, IIT Delhi</p>
                     <a href="https://ctech.iitd.ac.in/bkpanigrahi.html" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/mathilis.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Maithili SHARAN</h3>
-                    <p>INSA Senior Scientist</p>
+                    <p style="margin-bottom: 0.5rem">INSA Senior Scientist</p>
                     <a href="https://web.iitd.ac.in/~mathilis/" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/shaurya.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Shaurya SHRIYAM</h3>
-                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Mechanical Engineering, IIT Delhi</p>
                     <a href="https://web.iitd.ac.in/~shriyam/index.html" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/sawan_new1.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Sawan S. SINHA</h3>
-                    <p>Department of Applied Mechanics, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Applied Mechanics, IIT Delhi</p>
                     <a href="https://sites.google.com/view/sawanssinharesearchteaching/home" class="link" target="_blank">Visit Profile</a>
                 </div>
                 <div class="col-sm-4 text-center margin-b-30">
                     <img class="img-circle" src="index_files/Amber.jpg" alt="Leadership" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #eee;">
                     <h3 style="margin-top: 20px;">Prof. Amber SRIVASTAVA</h3>
-                    <p>Department of Mechanical Engineering, IIT Delhi</p>
+                    <p style="margin-bottom: 0.5rem">Department of Mechanical Engineering, IIT Delhi</p>
                     <a href="https://asrivastava93.github.io/index.html" class="link" target="_blank">Visit Profile</a>
                 </div>
             </div>
@@ -565,7 +646,7 @@
                                 <img src="index_files/kang.jpg" class="img-circle" alt="In-Sik KANG">
                                 <h4>In-Sik KANG</h4>
                                 <p>Emeritus Professor, Seoul National University, South Korea</p>
-                                <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
+                                <a href="" class="link">Visit Profile</a>
                             </div>
                         </div>
                         <!-- Advisor 7 -->
@@ -610,7 +691,7 @@
                                 <img src="index_files/Kalachand.png" class="img-circle" alt="Kalachand SAIN">
                                 <h4>Kalachand SAIN</h4>
                                 <p>Former Director, WIHG, India</p>
-                                <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
+                                <a href="" class="link">Visit Profile</a>
                             </div>
                         </div>
                         <!-- Advisor 12 -->
@@ -628,7 +709,7 @@
                                 <img src="index_files/tribbia.jpg" class="img-circle" alt="Joe TRIBBIA">
                                 <h4>Joe TRIBBIA</h4>
                                 <p>Scientist, NCAR, USA</p>
-                                <a href="mailto:email@iitd.ac.in" class="link">Visit Profile</a>
+                                <a href="" class="link">Visit Profile</a>
                             </div>
                         </div>
                     </div>
@@ -645,9 +726,9 @@
 
         <!-- Opportunities Section -->
         <div id="opportunities" class="content-lg container">
-            <div class="row">
-                <!-- Text Column (Left) -->
-                <div class="col-sm-7">
+            <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                <!-- Text Column (Left) - Increased width for better text flow -->
+                <div class="col-sm-8">
                     <h2 style="color: #003366; margin-bottom: 30px;">OPPORTUNITIES</h2>
                     
                     <p style="font-size: 16px; line-height: 1.8; color: #515769; text-align: justify; margin-bottom: 25px;">
@@ -656,64 +737,73 @@
                     </p>
                     
                     <p style="font-size: 16px; line-height: 1.8; color: #515769; text-align: justify; margin-bottom: 25px;">
-                        The research positions in these areas are 
-available at various levels, e.g., Junior Research Fellow, Senior 
-Research Fellow, Project Associate, Research Associate. 
-                        The qualification for these positions is as per 
-Institute and DST’s guidelines. The salary for these positions is based 
-on qualification and experience.
+                        The research positions in these areas are available at various levels, e.g., Junior Research Fellow, Senior Research Fellow, Project Associate, Research Associate. 
+                        The qualification for these positions is as per Institute and DST’s guidelines. The salary for these positions is based on qualification and experience.
                     </p>
                     
                     <p style="font-size: 16px; line-height: 1.8; color: #515769; text-align: justify;">
-                        Besides, we host short and long-term visitors 
-and will be more than happy to welcome you if you want to visit for 
-research collaborations; 
+                        Besides, we host short and long-term visitors and will be more than happy to welcome you if you want to visit for research collaborations; 
                         in that case please feel free to contact <strong>Dr. Saroj Kanta Mishra</strong> at 
                         <a href="mailto:skm@iitd.ac.in" style="color: #003366; font-weight: 600;">skm@iitd.ac.in</a>.
                     </p>
                 </div>
 
-                <!-- Image Column (Right) -->
-                <div class="col-sm-5">
-                    <div style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                        <!-- If you have an image, replace this div with an <img> tag -->
-                       <img src="index_files/Opportunities.gif" class="img-responsive" style="border-radius: 8px;">
-                    </div>
+                <!-- Image Column (Right) - Shrunk to col-sm-4 and centered -->
+                <div class="col-sm-4 text-center">
+                    <img src="index_files/Opportunities.png" class="img-responsive" style="max-width: 500px; margin: 0 auto; border-radius: 8px;">
                 </div>
             </div>
         </div>
                     
-        <!-- Footer Section -->
-        <footer class="footer" style="background: #0a0e14; color: #fff; padding: 50px 0;">
-            <div class="container">
-                <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
-                    
-                    <!-- Left: Contact Details -->
-                    <div class="col-sm-6">
-                        <h3 style="color: #fff; margin-bottom: 20px;">CONTACT US</h3>
-                        <p style="color: #ccc; line-height: 1.6;">
-                            DST Centre of Excellence for Climate Information,<br>
-                            Block VI, IIT Delhi
-                        </p>
-                        <p style="color: #ccc;">Email: skm@iitd.ac.in</p>
-                    </div>
+        <footer id="contact">
 
-                    <!-- Right: Map -->
-                    <div class="col-sm-6">
-                        <div class="map" style="height: 250px; background: #ffffff; border-radius: 5px; overflow: hidden;">
-                            <iframe src="index_files/embed.html" style="border:0" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-wrapper">
 
-                <!-- Bottom Copyright -->
-                <div class="row" style="margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; text-align: center;">
-                    <p style="color: #666; font-size: 13px;">
-                        2026 © DST Centre of Excellence for Climate Information, IIT Delhi | All Rights Reserved
+                <!-- CONTACT -->
+                <div class="footer-contact">
+
+                    <h3>CONTACT US</h3>
+
+                    <p>
+                    DST Centre of Excellence for Climate Information<br>
+                    Block VI, IIT Delhi
                     </p>
+
+                    <p>Phone: +91-11-2659-6053 / 1390</p>
+
+                    <p>Email:
+                    <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
+                    </p>
+
                 </div>
+
+
+                <div class="footer-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.215286280456!2d77.1884803150808!3d28.54686038243927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8560000001%3A0x7707e4e11e3b6a93!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1710150000000!5m2!1sen!2sin"
+                        width="420"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+
             </div>
-        </footer>
+
+
+            <div class="footer-bottom">
+
+            <p>2025 © DST Centre of Excellence for Climate Information, IIT Delhi</p>
+
+            <p>&lt;/&gt; Developed </p>
+
+            </div>
+
+            </footer>
+
+
+
         <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->
@@ -742,37 +832,36 @@ research collaborations;
 
         <script>
             $(document).ready(function(){
-                // Initialize Bootstrap Carousel
-                $('#highlightCarousel').carousel({
-                    interval: 5000 // Changes slide every 5 seconds
-                });
+                // Existing Carousel Init...
+                $('#highlightCarousel').carousel({ interval: 5000 });
 
-                // Initialize Swiper for Advisors Section
+                // ADVISOR SWIPER INIT
                 if (typeof Swiper !== 'undefined') {
                     var advisorSwiper = new Swiper('.advisor-swiper', {
                         slidesPerView: 4,
                         spaceBetween: 30,
                         loop: true,
-                        autoplay: 3000,
+                        autoplay: 2500, // Slides every 2.5 seconds
                         autoplayDisableOnInteraction: false,
                         pagination: '.advisor-pagination',
                         paginationClickable: true,
                         nextButton: '.advisor-next',
                         prevButton: '.advisor-prev',
                         breakpoints: {
-                            1199: {
-                                slidesPerView: 3,
-                                spaceBetween: 30
-                            },
-                            991: {
-                                slidesPerView: 2,
-                                spaceBetween: 20
-                            },
-                            767: {
-                                slidesPerView: 1,
-                                spaceBetween: 10
-                            }
+                            1199: { slidesPerView: 3, spaceBetween: 30 },
+                            991: { slidesPerView: 2, spaceBetween: 20 },
+                            767: { slidesPerView: 1, spaceBetween: 10 }
                         }
+                    });
+
+                    // STOP SLIDING ON HOVER
+                    $('.advisor-swiper').on('mouseenter', function() {
+                        advisorSwiper.stopAutoplay();
+                    });
+
+                    // RESUME SLIDING ON MOUSE LEAVE
+                    $('.advisor-swiper').on('mouseleave', function() {
+                        advisorSwiper.startAutoplay();
                     });
                 }
             });

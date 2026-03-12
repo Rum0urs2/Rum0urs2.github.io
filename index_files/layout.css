@@ -2067,7 +2067,7 @@ body {
 
 .brand-text-sub {
     color: #cbdcf0;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -2444,7 +2444,7 @@ body {
 }
 
 .carousel-title {
-    font-size: 80px;
+    font-size: 36px;
     font-weight: 900;
     text-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
@@ -2913,12 +2913,16 @@ body {
 }
 
 .highlight-img-box{
-    height:250px;
+    height:350px;
     margin-bottom:20px;
 }
 
 #highlightCarousel .col-sm-7{
     padding-left:15px;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    text-align: center;        /* center text lines */
+    margin: auto !important;
 }
 
 }
@@ -2928,12 +2932,18 @@ body {
     font-size: 24px !important;
     font-weight: 700 !important;
     margin-bottom: 15px !important;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    text-align: center;        /* center text lines */
 }
 
 #highlightCarousel p {
     color: #2c3e50 !important; /* Darker text for readability */
     font-size: 15px !important;
     line-height: 1.6 !important;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    text-align: center;        /* center text lines */
 }
 
 /* Remove Bootstrap image cropping */
@@ -2972,4 +2982,84 @@ margin-right:0;
     height:auto !important;
     max-width:100% !important;
     max-height:100% !important;
+}
+
+/* =========================================================
+   VERTICAL CENTERING FOR HIGHLIGHTS TEXT
+   ========================================================= */
+
+/* 1. Ensure the parent row aligns children (image and text) to the center */
+#highlightCarousel .flex-row {
+    display: flex !important;
+    align-items: center !important;     /* Vertically centers the two columns */
+    justify-content: center !important;
+    padding: 40px 60px !important;
+    min-height: 450px !important;
+}
+
+/* 2. Remove the default top margin on the Title */
+/* Bootstrap often adds 20px of space above h3 tags, which ruins centering */
+#highlightCarousel h3 {
+    margin-top: 0 !important;
+    color: #003366 !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+}
+
+/* 3. Target the text column specifically to force vertical alignment */
+#highlightCarousel .col-sm-7, 
+#highlightCarousel .col-sm-6 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Centers content inside the column itself */
+    height: 100% !important;
+}
+
+/* 4. Ensure the image box doesn't have extra bottom margin */
+.highlight-img-box {
+    margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   FIX: CAROUSEL ARROWS (NAVY STYLE)
+   ========================================================= */
+
+/* 1. Remove the default gray gradient background */
+#highlightCarousel .carousel-control {
+    background: none !important;
+    width: 60px !important; /* Narrower so they don't cover the image/text */
+    opacity: 1;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: none !important;
+}
+
+/* 2. Style the icon inside */
+#highlightCarousel .carousel-control i {
+    font-size: 30px !important;
+    color: #000000 !important; /* IIT Navy Blue */
+}
+
+/* 3. Hover effect */
+#highlightCarousel .carousel-control:hover {
+    opacity: 1;
+}
+
+/* 4. Position fix: Ensure arrows don't sit on top of the text too much */
+#highlightCarousel .left.carousel-control {
+    left: 10px !important;
+}
+
+#highlightCarousel .right.carousel-control {
+    right: 10px !important;
+}
+
+/* 5. Mobile Hide: Hide arrows on small screens to keep layout clean */
+@media (max-width: 767px) {
+    #highlightCarousel .carousel-control {
+        display: none !important;
+    }
 }

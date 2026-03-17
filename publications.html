@@ -1,156 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
+    <title>Publications | DST Center of Excellence</title>
     <meta charset="utf-8">
-    <title>Research Publications | DST CoE Climate Information</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="index_files/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="index_files/layout.css" rel="stylesheet" type="text/css">
-    <link href="index_files/animate.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Specific tweaks for this page */
-        .year-badge {
-            position: absolute; top: 20px; right: 20px;
-            background: #62a8ea; color: white; font-size: 11px;
-            font-weight: 700; padding: 3px 10px; border-radius: 20px;
-        }
-        .pub-card-new {
-            background: #fff; border: 1px solid #e1e1e1; border-radius: 8px;
-            padding: 25px; margin-bottom: 20px; position: relative; transition: 0.3s;
-        }
-        .pub-card-new:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-color: #62a8ea; }
-        .pub-card-new h3 { font-size: 18px; color: #003366; line-height: 1.4; padding-right: 60px; margin-top: 0; }
-        .pub-meta { font-weight: 600; color: #444; margin: 10px 0 5px; font-size: 14px; }
-        .pub-journal { color: #666; font-style: italic; font-size: 14px; }
-        .btn-pub-link { margin-top: 15px; display: inline-block; font-size: 12px; font-weight: 700; color: #62a8ea; text-transform: uppercase; }
-        
-        .filter-wrapper { background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .filter-wrapper label { color: #003366; font-weight: 700; font-size: 13px; margin-bottom: 8px; display: block; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<body class="subpage">
 
-<body id="body">
+    <!-- Header -->
+    <header id="header">
+        <div class="logo"><a href="index.html">DST Center of Excellence for Climate Information |</a><a href="https://home.iitd.ac.in/" target="_blank"> Indian Institute of Technology Delhi</a></div>
+        <a href="#menu">Menu</a>
+    </header>
 
-    <header class="header navbar-fixed-top custom-univ-header">
-    
-            <!-- Top Row: Branding (Blue Background) -->
-            <div class="brand-row" style="background-color: #003366;">
-                <div class="container">
-                    <div class="brand-flex-container">
-                        <!-- Left: Main Title -->
-                        <div class="brand-text-main">
-                            DST CENTRE OF EXCELLENCE FOR CLIMATE INFORMATION
-                        </div>
-                        
-                        <!-- Center: The Slanted Divider -->
-                        <div class="brand-separator"></div>
-                        
-                        <!-- Right: Sub Title -->
-                        <div class="brand-text-sub">
-                            INDIAN INSTITUTE OF TECHNOLOGY DELHI
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+        </ul>
+    </nav>
 
-            <!-- Bottom Row: Navigation (White Background) -->
-            <div class="nav-row" style="background-color: #b0f7ff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <div class="container">
-                    <nav class="navbar" style="margin: 0; border: none; min-height: auto;">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">ABOUT</a></li>
-                            <li><a href="index.html">RESEARCH</a></li>
-                            <li><a href="index.html">PUBLICATIONS</a></li>
-                            <li><a href="index.html">LEADERSHIP</a></li>
-                            <li><a href="index.html">ADVISORS</a></li>
-                            <li><a href="index.html">OPPORTUNITIES</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+    <section class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <p>Full Archive</p>
+                <h2>PUBLICATIONS</h2>
+            </header>
+        </div>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <!-- ========== SLIDER ========== -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div class="item active full-screen" style="height: 500px; background-image: url('img/pexels-no-name-14543-66997.jpg');">
-                
-                <!-- This container centers the text in the 'sky' area ABOVE the patch -->
-                <div class="hero-centering-wrapper">
-                    <div class="container text-center">
-                        <h1 class="carousel-title">RESEARCH PUBLICATIONS</h1>
-                    </div>
-                </div>
-
+    <section class="wrapper style2">
+        <div class="inner">
+            <div id="full-publications-grid" class="pub-grid">
+                <!-- JavaScript will inject all boxes here -->
             </div>
         </div>
+    </section>
 
-        <!-- THE UW-STYLE SWOOP (Parallel lines, shifted lower) -->
-        <div class="hero-arc-overlay">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" preserveAspectRatio="none">
-                <!-- Light Blue Stripe (Starts high at 300, drops to 420) -->
-                <path fill="#b0f7ff" d="M0,360 C500,360 1000,480 1440,480 L1440,500 L0,500 Z"></path>
-                <!-- White Layer (Starts at 330, drops to 450 -> Constant 30px Thickness) -->
-                <path fill="#ffffff" d="M0,380 C500,380 1000,500 1440,500 L1440,500 L0,500 Z"></path>
-            </svg>
-        </div>
-    </div>
+    <footer id="footer"><div class="container">&copy; DST Center of Excellence, IIT Delhi</div></footer>
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <div class="content-lg container">
-        <div class="row">
-            <!-- THIS CREATES THE SPACES ON LEFT AND RIGHT (Matching main page) -->
-            <div class="col-sm-10 col-sm-offset-1">
-                
-                <h2 style="color: #003366; font-weight: 700; margin-bottom: 30px;">Our Research Works</h2>
-                
-                <!-- FILTER BOX -->
-                <div class="filter-wrapper" style="background: #fff; border: 1px solid #e1e1e1; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px;">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <label style="color: #003366; font-weight: 700; font-size: 13px; margin-bottom: 8px; display: block;">Publication Year</label>
-                            <select id="filter-year" class="form-control" onchange="filterPublications()" style="background-color: #f8f9fa; border: 1px solid #ced4da; color: #333; height: 40px;">
-                                <option value="All">All Years</option>
-                            </select>
-                        </div>
-                        <div class="col-md-9 col-sm-12">
-                            <label style="color: #003366; font-weight: 700; font-size: 13px; margin-bottom: 8px; display: block;">Search Publications</label>
-                            <div class="input-group">
-                                <span class="input-group-addon" style="background: #f4f7f9; border-color: #dce4ec;">
-                                    <i class="fa-solid fa-magnifying-glass" style="color: #999;"></i>
-                                </span>
-                                <input type="text" id="search-box" class="form-control" placeholder="Search by title, author, or journal..." onkeyup="filterPublications()" style="background-color: #f8f9fa; border: 1px solid #ced4da; color: #333; height: 40px;">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row" style="margin-top: 20px;">
-                        <div class="col-sm-12">
-                            <!-- Filter Button -->
-                            <button class="btn btn-primary" onclick="filterPublications()" style="background: #a2cffe; border: none; color: #003366; font-weight: 600; padding: 10px 25px; transition: 0.3s;">
-                                <i class="fa-solid fa-filter" style="margin-right: 8px;"></i> Apply Filters
-                            </button>
-                            
-                            <!-- Reset Button -->
-                            <button class="btn btn-default" onclick="resetFilters()" style="padding: 10px 25px; margin-left: 10px; border: 1px solid #ddd; background: #fff; color: #333; font-weight: 600;">
-                                <i class="fa-solid fa-rotate-right" style="margin-right: 8px;"></i> Reset All
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PUBLICATIONS LIST (Cards injected here) -->
-                <div id="publications-container"></div>
-                
-            </div> <!-- End col-sm-10 -->
-        </div> <!-- End row -->
-    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
-        // YOUR DATA ARRAY
+        // PASTE YOUR FULL ARRAY HERE
         const publications = [
 
     {
@@ -1331,143 +1226,20 @@
     
 ];
 
-        // ADD REMAINING DATA HERE OR IN A SEPARATE JS FILE
-        // For demonstration, I will use a function to render whatever is in the 'publications' array.
-
-        function renderPublications(data) {
-        const container = document.getElementById('publications-container');
-        container.innerHTML = '';
-
-        data.forEach(pub => {
-            const card = document.createElement('div');
-            card.className = 'pub-card-new';
-            
-            // Icon for Button: If link exists use "External Link", else use "Lock"
-            const btnHtml = pub.link && pub.link !== "" ? 
-                `<a href="${pub.link}" target="_blank" class="btn btn-primary btn-sm" style="background: #a2cffe; border:none; color: #003366; font-weight:600;">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
-                </a>` : 
-                `<button class="btn btn-default btn-sm disabled" style="background: #eee; border:none; color: #888;">
-                    <i class="fa-solid fa-lock"></i> No Link Available
-                </button>`;
-            
-            const venue = pub.journal ? pub.journal : `${pub.conference} | ${pub.location}`;
+        const container = document.getElementById('full-publications-grid');
+        
+        publications.forEach(pub => {
+            const card = document.createElement('a');
+            card.className = 'pub-card';
+            card.href = pub.link || '#';
+            if(pub.link) card.target = "_blank";
 
             card.innerHTML = `
-                <span class="year-badge">${pub.year}</span>
-                <h3 style="font-weight: 700; color: #333; margin-bottom: 15px;">${pub.title}</h3>
-                
-                <!-- Author Icon -->
-                <p class="pub-meta" style="color: #666; font-size: 13px;">
-                    <i class="fa-solid fa-user" style="margin-right: 8px; color: #999;"></i> ${pub.authors}
-                </p>
-                
-                <!-- Journal Icon -->
-                <p class="pub-journal" style="color: #666; font-size: 13px; margin-bottom: 20px;">
-                    <i class="fa-solid fa-book-open" style="margin-right: 8px; color: #999;"></i> ${venue}
-                </p>
-                
-                ${btnHtml}
+                <h4>${pub.title}</h4>
+                <p>${pub.authors} | ${pub.year} | ${pub.journal || pub.conference}</p>
             `;
             container.appendChild(card);
         });
-    }
-
-        function populateYearFilter() {
-            const yearSelect = document.getElementById('filter-year');
-            const years = [...new Set(publications.map(p => p.year))].sort((a,b) => b-a);
-            years.forEach(year => {
-                const opt = document.createElement('option');
-                opt.value = year;
-                opt.textContent = year;
-                yearSelect.appendChild(opt);
-            });
-        }
-
-        function filterPublications() {
-            const yearVal = document.getElementById('filter-year').value;
-            const searchVal = document.getElementById('search-box').value.toLowerCase();
-
-            const filtered = publications.filter(pub => {
-                const matchesYear = (yearVal === 'All' || pub.year === yearVal);
-                const matchesSearch = pub.title.toLowerCase().includes(searchVal) || 
-                                     pub.authors.toLowerCase().includes(searchVal) ||
-                                     (pub.journal && pub.journal.toLowerCase().includes(searchVal));
-                return matchesYear && matchesSearch;
-            });
-
-            renderPublications(filtered);
-        }
-
-        // Initialize Page
-        window.onload = () => {
-            populateYearFilter();
-            renderPublications(publications);
-        };
-
-        function resetFilters() {
-            // 1. Clear the dropdown
-            document.getElementById('filter-year').value = 'All';
-            
-            // 2. Clear the text box
-            document.getElementById('search-box').value = '';
-            
-            // 3. Show all publications again
-            renderPublications(publications);
-        }
     </script>
-
-    <footer id="contact">
-
-            <div class="footer-wrapper">
-
-                <!-- CONTACT -->
-                <div class="footer-contact">
-
-                    <h3>CONTACT US</h3>
-
-                    <p>
-                    DST Centre of Excellence for Climate Information<br>
-                    Block VI, IIT Delhi
-                    </p>
-
-                    <p>Phone: +91-11-2659-6053 / 1390</p>
-
-                    <p>Email:
-                    <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
-                    </p>
-
-                </div>
-
-
-                <div class="footer-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.215286280456!2d77.1884803150808!3d28.54686038243927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8560000001%3A0x7707e4e11e3b6a93!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1710150000000!5m2!1sen!2sin"
-                        width="420"
-                        height="300"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-            <p>2025 © DST Centre of Excellence for Climate Information, IIT Delhi</p>
-
-            <p>&lt;/&gt; Developed </p>
-
-            </div>
-
-        </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#body" style="position: fixed; bottom: 20px; right: 20px; background: #62a8ea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 999;">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
-
 </body>
 </html>

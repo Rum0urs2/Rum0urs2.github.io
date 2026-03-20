@@ -1,51 +1,127 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Publications | DST Center of Excellence</title>
+    <title>Research Publications | DST Center of Excellence</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body class="subpage">
 
-    <!-- Header -->
     <header id="header">
-        <div class="logo"><a href="index.html">DST Center of Excellence for Climate Information |</a><a href="https://home.iitd.ac.in/" target="_blank"> Indian Institute of Technology Delhi</a></div>
+        <div class="logo">
+            <a href="index.html">DST Center of Excellence for Climate Information | </a> <a href="https://home.iitd.ac.in/" target="_blank">Indian Institute of Technology Delhi</a>
+        </div>
         <a href="#menu">Menu</a>
     </header>
 
-    <!-- Nav -->
     <nav id="menu">
         <ul class="links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Research</a></li>
+            <li><a href="index.html">Research Highlights</a></li>
+            <li><a href="index.html">Publications</a></li>
+            <li><a href="index.html">Leadership</a></li>
+            <li><a href="index.html">Advisors</a></li>
+            <li><a href="index.html">Opportunities</a></li>
+            <li><a href="index.html">Contact</a></li>
         </ul>
     </nav>
 
     <section class="wrapper style3">
         <div class="inner">
             <header class="align-center">
-                <p>Full Archive</p>
-                <h2>PUBLICATIONS</h2>
+                <h2>Research Publications</h2>
             </header>
         </div>
     </section>
 
     <section class="wrapper style2">
         <div class="inner">
-            <div id="full-publications-grid" class="pub-grid">
-                <!-- JavaScript will inject all boxes here -->
+            <h2 style="margin-bottom: 20px; color: #003366;">Our Research Works</h2>
+
+            <!-- Filter Controls -->
+            <div class="filter-section">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Publication Year</label>
+                        <select id="yearFilter">
+                            <option value="all">All Years</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Title Starts With</label>
+                        <select id="letterFilter">
+                            <option value="all">All Letters</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Search Publications</label>
+                        <input type="text" id="searchInput" placeholder="Search by title, author, or venue...">
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="button special small" onclick="applyFilters()">Apply Filters</button>
+                    <button class="button alt small" onclick="resetFilters()">Reset All</button>
+                </div>
+            </div>
+
+            <!-- Publications Grid -->
+            <div id="publicationsGrid" class="pub-grid">
+                <!-- JS will inject blocks here -->
             </div>
         </div>
     </section>
 
-    <footer id="footer"><div class="container">&copy; DST Center of Excellence, IIT Delhi</div></footer>
+    <footer id="footer">
+        <div class="inner">
+            <div class="row">
+                
+                <!-- Left Column: Contact Information -->
+                <div class="6u 12u(small)">
+                    <header>
+                        <h2 style="color: #ffffff; text-align: left;">Contact Us</h2>
+                    </header>
+                    <p style="text-align: left; color: #ffffff;">
+                        <strong style="color: #ffffff;">DST Centre of Excellence for Climate Information</strong><br>
+                        Block VI, Indian Institute of Technology Delhi<br>
+                        Hauz Khas, New Delhi - 110016, India
+                    </p>
+                    <p style="text-align: left; color: #ffffff;">
+                        <i class="fa fa-envelope"></i> <a href="mailto:skm@iitd.ac.in" style="color: #ffffff;">skm@iitd.ac.in</a>
+                    </p>
+                </div>
+
+                <!-- Right Column: Google Map -->
+                <div class="6u$ 12u(small)">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.215286280456!2d77.1884803150808!3d28.54686038243927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8560000001%3A0x7707e4e11e3b6a93!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1710150000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="250" 
+                            style="border: 0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 DST Centre of Excellence for Climate Information, IIT Delhi.
+        </div>
+    </footer>
 
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
+
     <script>
-        // PASTE YOUR FULL ARRAY HERE
         const publications = [
 
     {
@@ -1226,20 +1302,111 @@
     
 ];
 
-        const container = document.getElementById('full-publications-grid');
-        
-        publications.forEach(pub => {
-            const card = document.createElement('a');
-            card.className = 'pub-card';
-            card.href = pub.link || '#';
-            if(pub.link) card.target = "_blank";
+        // 1. Populate Filter Dropdowns
+        function setupFilters() {
+            const yearSelect = document.getElementById('yearFilter');
+            const letterSelect = document.getElementById('letterFilter');
+            
+            // Years
+            const years = [...new Set(publications.map(p => p.year))].sort().reverse();
+            years.forEach(year => {
+                let opt = document.createElement('option');
+                opt.value = year;
+                opt.innerHTML = year;
+                yearSelect.appendChild(opt);
+            });
 
-            card.innerHTML = `
-                <h4>${pub.title}</h4>
-                <p>${pub.authors} | ${pub.year} | ${pub.journal || pub.conference}</p>
-            `;
-            container.appendChild(card);
-        });
+            // Letters
+            for (let i = 65; i <= 90; i++) {
+                let char = String.fromCharCode(i);
+                let opt = document.createElement('option');
+                opt.value = char;
+                opt.innerHTML = char;
+                letterSelect.appendChild(opt);
+            }
+        }
+
+        // 2. Render Blocks
+        function renderPublications(data) {
+            const grid = document.getElementById('publicationsGrid');
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                grid.innerHTML = '<p style="grid-column: span 3; text-align:center;">No publications found matching your filters.</p>';
+                return;
+            }
+
+            data.forEach(pub => {
+                const block = document.createElement('a');
+                block.className = 'pub-block';
+                block.href = pub.link || '#';
+                if(pub.link) block.target = "_blank";
+
+                block.innerHTML = `
+                    <span class="pub-year-badge">${pub.year}</span>
+                    <h4>${pub.title}</h4>
+                    <p>${pub.authors}<br><br><strong>${pub.journal || pub.conference || ""}</strong></p>
+                `;
+                grid.appendChild(block);
+            });
+        }
+
+        // 3. Filter Logic
+        function applyFilters() {
+            const yearVal = document.getElementById('yearFilter').value;
+            const letterVal = document.getElementById('letterFilter').value;
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+
+            const filtered = publications.filter(pub => {
+                const matchesYear = yearVal === 'all' || pub.year === yearVal;
+                const matchesLetter = letterVal === 'all' || pub.title.trim().startsWith(letterVal);
+                const matchesSearch = pub.title.toLowerCase().includes(searchVal) || 
+                                     pub.authors.toLowerCase().includes(searchVal);
+
+                return matchesYear && matchesLetter && matchesSearch;
+            });
+
+            renderPublications(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('yearFilter').value = 'all';
+            document.getElementById('letterFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            renderPublications(publications);
+        }
+
+        // Initialize
+        setupFilters();
+        renderPublications(publications);
+    </script>
+    <script>
+        // Ensure 'publications' array is defined above this
+        const grid = document.getElementById('publicationsGrid');
+
+        function renderFullWidth() {
+            grid.innerHTML = ''; // Clear container
+
+            publications.forEach(pub => {
+                const block = document.createElement('a');
+                block.className = 'pub-block';
+                block.href = pub.link || '#';
+                if(pub.link) block.target = "_blank";
+
+                // Structure each block with Title and Details
+                block.innerHTML = `
+                    <span class="pub-year-badge">${pub.year}</span>
+                    <h4>${pub.title}</h4>
+                    <p>
+                        ${pub.authors}<br>
+                        <strong>${pub.journal || pub.conference || ""}</strong>
+                    </p>
+                `;
+                grid.appendChild(block);
+            });
+        }
+
+        renderFullWidth();
     </script>
 </body>
 </html>

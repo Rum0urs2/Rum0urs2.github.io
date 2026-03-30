@@ -10,6 +10,16 @@
 
 /* Reset */
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for the Fixed Header */
+/* This prevents the section title from being hidden behind the top bar */
+section[id] {
+    scroll-margin-top: 5em; 
+}
+
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -3344,8 +3354,7 @@
 			}
 
 			.wrapper.style3 p {
-				text-transform: uppercase;
-				font-size: .75rem;
+				font-size: .9rem;
 				font-weight: 300;
 				margin: 0 0 .5rem 0;
 				padding: 0 0 1rem 0;
@@ -4183,7 +4192,7 @@
 				}
 
 			.banner > article p {
-				color: rgba(255, 255, 255, 0.65);
+				color: rgb(255, 255, 255);
 				text-transform: uppercase;
 				font-size: 1rem;
 				font-weight: 300;
@@ -4551,8 +4560,8 @@ a:hover { color: #0055aa; }
 }
 
 .leader-info p {
-    color: #666;
-    font-size: 0.85rem;
+    color: #000000;
+    font-size: 0.8rem;
     margin: 0;
     transition: color 0.3s ease;
 }
@@ -4651,7 +4660,7 @@ a:hover { color: #0055aa; }
 /* --- Publication List Layout --- */
 
 .publication-list-container {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -4683,6 +4692,7 @@ a:hover { color: #0055aa; }
 .pub-text strong {
     color: #003366; /* Navy Blue for the Title */
     font-weight: 600;
+	font-size: 1.125rem;
 }
 
 /* Responsive Fix */
@@ -4738,16 +4748,17 @@ a:hover { color: #0055aa; }
 }
 
 .advisor-box .leader-info h4 {
-    color: #003366; /* Navy text on white box */
-    font-size: 0.95rem;
+    color: #000000; /* Navy text on white box */
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 0.25rem;
 }
 
 .advisor-box .leader-info p {
-    color: #666; /* Gray text on white box */
-    font-size: 0.8rem;
+    color: #000000; /* Gray text on white box */
+    font-size: 0.7rem;
     margin: 0;
+	padding: 0 !important;
 }
 
 /* Hover State - Turn all text white */
@@ -4970,7 +4981,7 @@ a.publication-item p {
 
     #research .grid-style > * {
         width: 33.333% !important; /* Force 3 columns */
-        padding: 0 15px 30px 15px !important; /* Equal padding for everyone */
+        padding: 0 15px 0px 15px !important; /* Equal padding for everyone */
         display: flex !important;
     }
 
@@ -4991,7 +5002,7 @@ a.publication-item p {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -5001,7 +5012,6 @@ a.publication-item p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
 }
 
 /* THIS ALIGNS THE SMALL TEXT AT THE BOTTOM */
@@ -5010,7 +5020,7 @@ a.publication-item p {
     font-size: 0.75rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #666 !important;
+    color: #000000 !important;
 }
 
 /* Ensure images don't distort the box */
@@ -5020,25 +5030,28 @@ a.publication-item p {
     padding: 20px;
 }
 
-/* --- Split Header Style --- */
+/* --- Optimized Header Fix --- */
 
 #header {
     display: flex !important;
-    justify-content: space-between !important; /* Pushes Logo to Left, Nav to Right */
+    justify-content: space-between !important;
     align-items: center !important;
     padding: 0 2rem !important;
-    height: 4em !important;
-    line-height: 4em !important;
+    height: 4.5em !important; /* Fixed height for consistency */
+    line-height: 1 !important;  /* CRITICAL: Resets Hielo's vertical centering logic */
 }
 
-/* 1. Left Side Branding */
+/* 1. Reset Hielo's absolute positioning on the logo */
 #header .logo {
-    position: static !important; /* Removes Hielo's pinning */
+    position: static !important; 
     margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
 }
 
 #header .logo a {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem !important; /* Standardized size */
     font-weight: 600 !important;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -5046,32 +5059,51 @@ a.publication-item p {
     border: none !important;
 }
 
-/* 2. Right Side Container */
+/* 2. Navigation Container (IIT + Divider + Menu) */
 .nav-right {
     display: flex !important;
     align-items: center !important;
+    height: 100% !important;
 }
 
 .iit-header {
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255);
+    font-size: 1.5rem !important; /* Proportional to logo */
+    color: #ffffff !important;
+    margin: 0;
+    /* Optical alignment nudge */
+    position: relative;
+    top: 1px; 
 }
 
 .header-divider {
-    margin: 0 1rem; /* Spacing around the | */
-    color: rgba(255, 255, 255, 0.3);
-    font-weight: 300;
+    display: inline-block !important;
+    margin: 0 1.2rem !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.1rem !important;
+    /* Stretches the line without making it thick */
+    transform: scaleY(1.4); 
+    vertical-align: middle;
 }
 
-/* 3. Adjust Menu Button */
+/* 3. Reset Hielo's specific styling for the Menu link */
 #header a[href="#menu"] {
-    position: static !important; /* Moves it inside the flex flow */
-    padding: 0 !important;
+    position: static !important; /* Moves it back into the flex row */
+    font-size: 1.5rem !important;
     color: #ffffff !important;
     border: none !important;
-	font-size: 1.5rem;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-decoration: none !important;
 }
 
+/* --- Conflicting Hielo Part Fixes --- */
+
+/* Hielo adds a border-left to the last link in the header. Let's remove it. */
+#header > a + a[href="#menu"]:last-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
 /* Responsive: Hide IIT text on mobile so they don't crash into each other */
 @media screen and (max-width: 980px) {
     .iit-header, .header-divider {
@@ -5083,7 +5115,6 @@ a.publication-item p {
 
 .highlights-grid-swiper {
     width: 100%;
-    padding: 20px 0 60px 0 !important;
 }
 
 .high-card {
@@ -5182,4 +5213,175 @@ a.publication-item p {
 .high-arrow-prev:hover, .high-arrow-next:hover {
     background: #003366;
     color: white;
+}
+
+/* --- Centering the Last Row of Leadership/Advisors --- */
+
+#leadership .row, 
+#advisors .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* This centers the incomplete row */
+}
+
+/* Reset Hielo's float logic so flexbox can take over */
+#leadership .row > *, 
+#advisors .row > * {
+    float: none !important;
+}
+
+/* Ensure boxes maintain their 3-per-row width on Desktop */
+@media screen and (min-width: 981px) {
+    #leadership .row > *, 
+    #advisors .row > * {
+        width: 33.333% !important; 
+        padding: 0 15px !important;
+    }
+}
+
+/* Standardize the look for Advisors (Advisors often have longer titles) */
+.advisor-box .leader-info {
+    padding: 0.5rem 1rem !important;
+}
+
+
+/* --- Pillar-Style Research Highlights --- */
+
+.highlights-split-swiper {
+    width: 100%;
+    padding: 10px 10px 40px 10px !important;
+}
+
+.high-split-box {
+    background: #fff;
+    /* border-radius: 12px; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.high-split-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.high-image {
+    height: 250px; /* Fixed height for image area */
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.high-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps illustrations looking good */
+    padding: 20px;
+}
+
+.high-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.high-content h3 {
+    color: #003366 !important;
+    font-size: 1.1rem;
+    margin-bottom: 10px !important;
+    min-height: 2.5em; /* Ensures titles align */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.high-content p {
+    font-size: 0.85rem;
+    color: #666 !important;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.high-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #003366 !important;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+}
+.high-link:hover { border-bottom-color: #003366; }
+
+/* Side Arrow Positioning */
+.high-side-prev, .high-side-next {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    color: #003366;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.high-side-prev { left: -60px; }
+.high-side-next { right: -60px; }
+
+.high-side-prev:hover, .high-side-next:hover {
+    background: #003366;
+    color: #fff;
+}
+
+/* On smaller screens, move arrows slightly inside */
+@media screen and (max-width: 1280px) {
+    .high-side-prev { left: -20px; }
+    .high-side-next { right: -20px; }
+}
+@media screen and (max-width: 736px) {
+    .high-side-prev, .high-side-next { display: none; } /* Hide on mobile for better space */
+}
+
+/* --- Fix for Subpage Header Background --- */
+
+#header {
+    background-color: #000000 !important; /* Solid Black or Navy (#003366) */
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+/* Ensure subpages have enough space at the top so content isn't hidden */
+body.subpage {
+    padding-top: 4.5em !important;
+}
+
+/* Keep Logo and Nav perfectly leveled */
+#header .logo, 
+.nav-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#header .logo a, 
+.iit-header, 
+.menu-trigger {
+    color: #ffffff !important;
+    line-height: 1 !important;
 }

@@ -2992,7 +2992,7 @@ section[id] {
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #8a4680;
+					background-color: #3182ce;
 					color: #ffffff !important;
 				}
 
@@ -3001,7 +3001,7 @@ section[id] {
 					.wrapper.style2 input[type="button"].special:hover,
 					.wrapper.style2 button.special:hover,
 					.wrapper.style2 .button.special:hover {
-						background-color: #9b4f90;
+						background-color: #3182ce;
 					}
 
 					.wrapper.style2 input[type="submit"].special:active,
@@ -3009,7 +3009,7 @@ section[id] {
 					.wrapper.style2 input[type="button"].special:active,
 					.wrapper.style2 button.special:active,
 					.wrapper.style2 .button.special:active {
-						background-color: #793d70;
+						background-color: #3182ce;
 					}
 
 			.wrapper.style2 label {
@@ -4522,7 +4522,7 @@ a:hover { color: #0055aa; }
 }
 
 .leader-card:hover {
-    background: #003366; 
+    background: #ffffff; 
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
@@ -4569,7 +4569,7 @@ a:hover { color: #0055aa; }
 /* Hover States */
 .leader-card:hover .leader-info h4,
 .leader-card:hover .leader-info p {
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* Mobile Adjustments */
@@ -4678,7 +4678,6 @@ a:hover { color: #0055aa; }
 .publication-item:hover {
     transform: translateX(10px);
     background: #f8fbff;
-    border-left: 6px solid #003366; /* IIT Delhi Blue */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -4720,7 +4719,7 @@ a:hover { color: #0055aa; }
 }
 
 .advisor-box:hover {
-    background: #003366 !important; /* Fills with Navy on hover */
+    background: #ffffff !important; /* Fills with Navy on hover */
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Stronger shadow for dark background */
 }
@@ -4764,7 +4763,7 @@ a:hover { color: #0055aa; }
 /* Hover State - Turn all text white */
 .advisor-box:hover .leader-info h4,
 .advisor-box:hover .leader-info p {
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* Ensure the Advisor grid stacks properly on mobile */
@@ -5290,7 +5289,7 @@ a.publication-item p {
 }
 
 .high-content h3 {
-    color: #003366 !important;
+    color: #000000 !important;
     font-size: 1.1rem;
     margin-bottom: 10px !important;
     min-height: 2.5em; /* Ensures titles align */
@@ -5311,14 +5310,14 @@ a.publication-item p {
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #003366 !important;
+    color: #000000 !important;
     text-decoration: none;
     border-bottom: 2px solid transparent;
     display: inline-block;
     width: fit-content;
     margin: 0 auto;
 }
-.high-link:hover { border-bottom-color: #003366; }
+.high-link:hover { border-bottom-color: #000000; }
 
 /* Side Arrow Positioning */
 .high-side-prev, .high-side-next {
@@ -5385,3 +5384,85 @@ body.subpage {
     color: #ffffff !important;
     line-height: 1 !important;
 }
+
+/* --- Publication Block Styling --- */
+
+.pub-block {
+    background: #ffffff !important;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 10px !important;
+    padding: 25px 35px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    width: 100% !important;
+    margin-bottom: 15px;
+    text-decoration: none !important;
+}
+
+/* Hover Effect for ALL blocks (linked or not) */
+.pub-block:hover {
+    background: #ffffff !important; /* Navy Blue */
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Text color changes to white on hover */
+.pub-block h4 { color: #000000; transition: color 0.3s; margin-bottom: 10px !important; }
+.pub-block p { color: #555; transition: color 0.3s; }
+
+.pub-block:hover h4, 
+.pub-block:hover p {
+    color: #000000 !important;
+}
+
+/* Badge Styling */
+.pub-action-badge {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Make badges white on hover so they are visible */
+.pub-block:hover .pub-action-badge {
+    color: #000000;
+    border-color: #000000;
+}
+
+.pub-action-badge.forthcoming {
+    color: #000000;
+    border-color: #000000;
+    background: #ffffff;
+}
+
+.pub-block:hover .pub-action-badge.forthcoming {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+}
+
+/* Year Badge Fix */
+.pub-year-badge {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: #3182ce;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+.pub-block:hover .pub-year-badge {
+    background: #3182ce;
+    color: #ffffff;
+}
+

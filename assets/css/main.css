@@ -6168,4 +6168,42 @@ body.subpage {
     }
 }
 
+.banner {
+    position: relative;
+}
 
+.banner-arrow-next {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensures it sits above the images */
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 3.5rem;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.banner-arrow-next:hover {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Hide the arrow on very small mobile screens if preferred */
+@media screen and (max-width: 480px) {
+    .banner-arrow-next {
+        right: 15px;
+        font-size: 2.5rem;
+        width: 45px;
+        height: 45px;
+    }
+}

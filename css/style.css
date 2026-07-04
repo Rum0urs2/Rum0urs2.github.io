@@ -1,1 +1,779 @@
+/* Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-y: auto; /* Restores standard browser continuous scrolling */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Fixed Top Header Navigation (Lancet style) */
+header {
+    width: 100%;
+    height: 80px; /* Fixed height for clean alignment */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: rgb(1, 43, 107);
+    backdrop-filter: blur(10px); /* Soft blur effect behind header */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-logo {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+.lang-selector {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333333;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+nav.menu-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600; /* Bold links matching Lancet style */
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.menu-links a:hover {
+    transform: scale(1.05);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.btn-red {
+    background-color: #ffffff;
+    color: rgb(1, 43, 107);
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: font-weight 0.2s ease,
+                transform 0.2s ease-in-out;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.btn-red:hover {
+    font-weight: bolder;
+    transform: scale(1.1);
+}
+
+/* Floating Sidebar Navigation Indicators */
+.scroll-nav {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 999;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+.scroll-dot:hover, .scroll-dot.active {
+    background-color: #C3203B;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(195, 32, 59, 0.3);
+}
+
+/* 1. THEMATIC INTRO COVER SECTION */
+.cover-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding-top: 80px;
+    background-color: #d3d7ee;
+    background-size: 120px 120px, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, 0 0;
+}
+
+.cover-content {
+    max-width: 1900px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Elegant icon header placement */
+.cover-icon {
+    margin-bottom: 25px;
+    opacity: 0.85;
+    animation: fadeInIcon 1.5s ease-out;
+}
+
+.cover-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #C3203B; /* Crimson red accent */
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Clean letter spacing */
+    display: block;
+    margin-bottom: 15px;
+}
+
+.cover-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: rgb(1, 43, 107);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+/* Brand cohesive dual-accent line */
+.title-divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #007A87 40%, #C3203B 40%, #C3203B 55%, #007A87 55%);
+    margin-bottom: 30px;
+    border-radius: 2px;
+}
+
+.cover-institution {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: rgb(15, 95, 216);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeInIcon {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 0.85; transform: translateY(0); }
+}
+
+/* 2. INTERACTIVE SYSTEM CONTAINER */
+.stage-section-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #d3d7ee;
+}
+
+.stage-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slide Section layers inside the stage container */
+.slide-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d3d7ee;
+    /* REMOVED top padding so image occupies the absolute full screen */
+    padding-top: 0; 
+    opacity: 0;
+    visibility: hidden;
+    /* Clean "Camera Lens Zoom" timing function */
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.65s;
+    z-index: 1;
+}
+
+/* Active State (settles into focus) */
+.slide-section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 10;
+}
+
+/* Zoomed Out State (Slide 1 shrinks back when detailed slides pop out) */
+.slide-section.zoomed-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.92);
+    z-index: 1;
+}
+
+/* Detail Slides zoom from a slightly larger scale (1.08) downwards into focus */
+.detail-slide {
+    transform: scale(1.08);
+}
+
+/* Standard slide images changed to take up entire space */
+.bg-image {
+    width: 100vw;
+    height: 95.75vh;
+    display: block;
+}
+
+/* Responsive Image Wrapper (Stretched to take up entire screen space) */
+.image-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 95.75vh;
+    z-index: 1;
+    margin: 0 auto;
+    container-type: both; /* Sets up container queries for automatic element-scaling */
+}
+
+/* Full space image content */
+.bg-image-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Takes up the entire screen space */
+    border-radius: 0; /* Clears corner borders for a true full bleed background */
+}
+
+/* Dynamic Live HTML Overlay (Coordinates locked directly to the aspect ratio container) */
+.slide-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Added top padding to push text content down below the 80px fixed header */
+    padding: 110px 5cqw 4.5cqh 5cqw; 
+    z-index: 5;
+    pointer-events: none; /* Allows click events to slide through to child elements */
+}
+
+/* Left-Aligned Title Header inside Slide 1 */
+.overlay-header {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns contents explicitly to the left side */
+    padding-left: 2cqw; /* Clean margin from left border */
+    max-width: 65cqw; /* Constrains text width to the left side of the graphic */
+}
+
+.overlay-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.5cqw; /* Fluid responsive font sizing */
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 1.5cqh;
+    letter-spacing: -0.5px;
+}
+
+.overlay-header p {
+    font-size: 1.5cqw;
+    max-width: 58cqw;
+    line-height: 1.5;
+    color: #444444;
+    font-weight: 500;
+}
+
+/* Centered Row with Responsive Horizontal Gap */
+.overlay-cards-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 6cqw; /* Generous, scalable spacing between centered cards */
+    width: 100%;
+}
+
+/* Constrained Responsive Card Sizing */
+.overlay-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+    width: 26cqw; /* Decreased card width (was 32cqw) */
+    height: 38cqh; /* Proportionally adjusted card height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5cqw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.45s ease, 
+                border-color 0.45s ease, 
+                box-shadow 0.45s ease;
+}
+
+.overlay-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+}
+
+/* New Horizontal Row container holding Icon and Title */
+.card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2cqw; /* Spacing between the icon and title text */
+    width: 100%;
+    margin-bottom: 1.5cqh; /* Spacing between header row and underline */
+}
+
+.card-icon-circle {
+    width: 3cqw; /* Adjusted proportional dimensions */
+    height: 3cqw;
+    border-radius: 50%;
+    background-color: rgba(0, 122, 135, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+
+.overlay-card:hover .card-icon-circle {
+    background-color: rgba(0, 122, 135, 0.15);
+}
+
+.card-icon-circle svg {
+    width: 50%;
+    height: 50%;
+}
+
+.overlay-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75cqw;
+    font-weight: 700;
+    color: #007A87;
+    margin: 0; /* Clears bottom margin to align perfectly with the icon */
+    line-height: 1;
+}
+
+.card-underline {
+    width: 2.5cqw;
+    height: 3px;
+    background-color: #007A87;
+    margin-bottom: 2cqh; /* Spacing between underline and description paragraph */
+}
+
+.overlay-card p {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #333333;
+}
+
+/* Left-Aligned Bullet Row footer overlay layout */
+.overlay-bullets-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Anchors bullets to the left side */
+    width: 100%;
+    gap: 1.5cqw;
+    padding-left: 2cqw; /* Matches header and cards left alignment */
+}
+
+.bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5cqw;
+    font-size: 1.2cqw;
+    font-weight: 600;
+    color: #444444;
+}
+
+.bullet-icon {
+    font-size: 1.4cqw;
+}
+
+.bullet-divider {
+    width: 1px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Premium Floating Back Button inside Slides 2 & 3 */
+.btn-back {
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    z-index: 100;
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-back:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transform: translateX(-4px);
+    box-shadow: 0 6px 20px rgba(195, 32, 59, 0.2);
+}
+
+/* Floating Scroll-down Indicator Mouse and Arrow */
+.scroll-cue {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    position: relative;
+    display: block;
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #C3203B;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollScroll 1.8s infinite ease-in-out;
+}
+
+.scroll-arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transform: rotate(45deg);
+    animation: bounceArrow 1.8s infinite ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes scrollScroll {
+    0% { opacity: 1; top: 6px; }
+    50% { opacity: 0.3; top: 16px; }
+    100% { opacity: 1; top: 6px; }
+}
+
+@keyframes bounceArrow {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(6px) rotate(45deg); }
+}
+
+/* Footer Container sitting naturally at the absolute end of the scroll flow */
+footer {
+    width: 100%;
+    background-color: rgb(1, 43, 107); /* Light grey backdrop to isolate footer content */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 60px 50px 30px 50px;
+    z-index: 10;
+}
+
+.footer-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Left Column: Contact Details */
+.footer-contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer-contact h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
+}
+
+.footer-contact .org-name {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.footer-contact .address-lines {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-contact .email-line {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact .email-line a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact .email-line a:hover {
+    font-weight: bolder;
+}
+
+.footer-contact .email-icon {
+    color: #ffffff;
+}
+
+/* Right Column: Google Map Container */
+.footer-map {
+    width: 600px;
+    height: 220px;
+    flex-shrink: 0;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Bottom Centered Copyright Bar */
+.copyright-bar {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Responsive media query overrides for tablet and mobile devices */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav.menu-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav.menu-links a {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .btn-red {
+        font-size: 1rem;
+    }
+
+    .slide-section {
+        min-height: auto;
+        padding: 140px 20px 40px 20px;
+    }
+
+    .cover-section {
+        padding: 160px 20px 40px 20px;
+    }
+
+    .cover-title {
+        font-size: 2.2rem;
+    }
+
+    .cover-institution {
+        font-size: 1.1rem;
+    }
+
+    .bg-image, .bg-image-content {
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+    }
+
+    /* Target overlay elements to stack cleanly on small smartphone screens */
+    .overlay-cards-row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .overlay-card {
+        width: 85% !important;
+        height: auto !important;
+        padding: 25px !important;
+    }
+
+    .card-header-row {
+        gap: 12px !important;
+    }
+
+    .card-icon-circle {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .overlay-card h3 {
+        font-size: 1.15rem !important;
+    }
+
+    .overlay-card p {
+        font-size: 0.85rem !important;
+    }
+
+    .overlay-header h2 {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+
+    .overlay-header p {
+        font-size: 0.9rem !important;
+        text-align: center;
+        max-width: 100% !important;
+    }
+
+    .overlay-bullets-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px !important;
+    }
+
+    .bullet-item {
+        font-size: 0.85rem !important;
+    }
+
+    .bullet-divider {
+        display: none; /* Hide dividers when wrapping items vertically */
+    }
+
+    .btn-back {
+        top: 160px;
+        left: 20px;
+        font-size: 0.75rem;
+        padding: 8px 16px;
+    }
+
+    .scroll-nav {
+        display: none; /* Hide floating navigation on small screens */
+    }
+
+    footer {
+        padding: 40px 20px 20px 20px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .footer-map {
+        width: 100%;
+        height: 180px;
+    }
+}

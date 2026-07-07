@@ -71,12 +71,11 @@ nav.menu-links a {
     font-weight: 600; /* Bold links matching Lancet style */
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: transform 0.3s ease-in-out font-weight 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 nav.menu-links a:hover {
-    transform: scale(1.05);
-    font-weight: bold;
+    transform: scale(1.08);
 }
 
 .nav-right {
@@ -84,55 +83,25 @@ nav.menu-links a:hover {
     align-items: center;
 }
 
+/* Same color for the IIT DELHI Button and the headers, if want to change, change bg-color & color  */
 .btn-red {
     background-color: #4e87df;
     color: rgb(255, 255, 255);
     border: none;
     padding: 10px 22px;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 3px;
-    transition: font-weight 0.2s ease,
-                transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
     display: inline-block;
 }
 
 .btn-red:hover {
-    font-weight: bolder;
-    transform: scale(1.1);
-}
-
-/* Floating Sidebar Navigation Indicators */
-.scroll-nav {
-    position: fixed;
-    right: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    z-index: 999;
-}
-
-.scroll-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.15);
-    border: 2px solid transparent;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer;
-}
-
-.scroll-dot:hover, .scroll-dot.active {
-    background-color: #C3203B;
-    transform: scale(1.3);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 8px rgba(195, 32, 59, 0.3);
+    transform: scale(1.08);
 }
 
 /* 1. THEMATIC INTRO COVER SECTION */
@@ -201,27 +170,88 @@ nav.menu-links a:hover {
     background-color: #f1f3ff; /* Keeps section background consistent with Cover */
 }
 
-/* Standard vertically stacked slide container */
+/* 1. Master Slide Section Container (Relative positioning anchors the background patches) */
 .slide-section {
+    position: relative; /* REQUIRED: Anchors the background patches */
     width: 100%;
-    min-height: 100vh; /* Ensures each image takes up a full screen height */
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically centers both the image and the patch together */
     justify-content: center;
-    position: relative;
-    padding-top: 80px; /* Offset for the fixed header */
+    background-color: #ffffff; /* Page background behind the patches */
+    padding-top: 80px; /* Safe offset for the fixed header */
     padding-bottom: 20px;
 }
 
-/* Standard slide images changed to take up entire space with safety limits to prevent cutting */
+/* 2. Master Background Patch (Shared structural rules) */
+.slide-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100vw; /* Spans the entire screen width */
+    height: 82vh; /* MATCHES IMAGE HEIGHT: Set to 82vh to align perfectly with your images */
+    z-index: 0; /* Sits behind the image and text overlays */
+    pointer-events: none;
+}
+
+/* ==========================================
+   CUSTOM GRADIENTS (Edit these colors as desired)
+   ========================================== */
+
+/* #slide-overview::before {
+    background: linear-gradient(90deg, #cee4f8 0%, #0a396d 100%);
+}
+
+#slide-discovery::before {
+    background: linear-gradient(90deg, #f9fbfc 0%, #0c3879 100%);
+}
+
+#slide-foresight::before {
+    background: linear-gradient(90deg, #f1f6fa 0%, #001537 100%);
+} */
+
+/* ==========================================
+   CUSTOM SPLIT-COLOR BANDS (Left/Right Split)
+   ========================================== */
+
+#slide-overview::before {
+    background: linear-gradient(90deg, #cee4f8 50%, #0a396d 50%);
+}
+
+#slide-discovery::before {
+    background: linear-gradient(90deg, #f9fbfc 50%, #0c3879 50%);
+}
+
+#slide-foresight::before {
+    background: linear-gradient(90deg, #f1f6fa 50%, #001537 50%);
+}
+
+/* ==========================================
+   IMAGE & WRAPPER SIZING (Aligned to center)
+   ========================================== */
+
+/* Standard Slide Images (Slides 2 & 3) */
 .bg-image {
     width: 92vw;
-    height: 82vh; /* Restricted height prevents overlap on different aspect ratios */
-    object-fit: contain; /* Prevents image distortion */
+    height: 82vh; /* Centered dynamically by Flexbox inside the slide-section */
+    object-fit: contain; 
     display: block;
-    margin: 50px auto 0 auto; /* Offsets to account for header top-gap */
-    border-radius: 4px; /* Slightly softens the image corners */
+    margin: 0 auto; /* Clears top margin so flexbox handles alignment with the patch */
+    position: relative;
+    z-index: 1; /* Sits above the background patch */
 }
+
+/* Slide 1 Image Wrapper */
+.image-wrapper {
+    position: relative;
+    width: min(95vw, calc(88vh * 1.48));
+    height: min(88vh, calc(95vw / 1.48));
+    aspect-ratio: 1014 / 685;
+    z-index: 1; /* Sits above the background patch */
+    margin: 0 auto;
+    container-type: both;
+}
+
 
 /* Footer Container sitting naturally at the absolute end of the scroll flow */
 footer {

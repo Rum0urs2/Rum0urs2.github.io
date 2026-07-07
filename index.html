@@ -57,22 +57,37 @@
         </div>
     </section>
 
-    <!-- 2. SCROLLING IMAGE SECTIONS -->
+    <!-- 2. SCROLLING IMAGE SECTIONS (Optimized with Responsive <picture> fallbacks) -->
     <main class="stage-section-wrapper" id="stage-section">
         
         <!-- Slide Section 1: Overview Image -->
         <section class="slide-section" id="slide-overview">
-            <img src="Images/Front_Page/Coe_page-0001.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
+            <picture>
+                <!-- Loads the fast, compressed WebP first -->
+                <source srcset="Images/Front_Page/Coe_page-0001.webp" type="image/webp">
+                <!-- Falls back to PNG if WebP is not supported by the browser -->
+                <img src="Images/Front_Page/Coe_page-0001.png" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
+            </picture>
         </section>
 
         <!-- Slide Section 2: Climate Discovery Image -->
         <section class="slide-section" id="slide-discovery">
-            <img src="Images/Front_Page/Coe_page-0002.webp" alt="Climate Discovery Detail" class="bg-image" loading="lazy">
+            <picture>
+                <!-- Loads the fast, compressed WebP first -->
+                <source srcset="Images/Front_Page/Coe_page-0002.webp" type="image/webp">
+                <!-- Falls back to PNG if WebP is not supported by the browser -->
+                <img src="Images/Front_Page/Coe_page-0002.png" alt="Climate Discovery Detail" class="bg-image" loading="lazy">
+            </picture>
         </section>
 
         <!-- Slide Section 3: Climate Foresight Image -->
         <section class="slide-section" id="slide-foresight">
-            <img src="Images/Front_Page/Coe_page-0003.webp" alt="Climate Foresight Detail" class="bg-image" loading="lazy">
+            <picture>
+                <!-- Loads the fast, compressed WebP first -->
+                <source srcset="Images/Front_Page/Coe_page-0003.webp" type="image/webp">
+                <!-- Falls back to PNG if WebP is not supported by the browser -->
+                <img src="Images/Front_Page/Coe_page-0003.png" alt="Climate Foresight Detail" class="bg-image" loading="lazy">
+            </picture>
         </section>
 
     </main>

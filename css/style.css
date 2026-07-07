@@ -12,7 +12,7 @@ html {
 html, body {
     width: 100%;
     min-height: 100%;
-    overflow-y: auto; /* Restores standard browser continuous scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
 }
@@ -25,8 +25,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    background-color: rgb(1, 43, 107);
+    background-color: #4e87df;
     backdrop-filter: blur(10px); /* Soft blur effect behind header */
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     position: fixed;
     top: 0;
@@ -49,7 +50,7 @@ header {
 .lang-selector {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #333333;
+    color: #ffffff; /* White text for contrast on blue background */
     cursor: pointer;
     text-transform: uppercase;
     display: flex;
@@ -69,12 +70,13 @@ nav.menu-links a {
     font-size: 1.5rem;
     font-weight: 600; /* Bold links matching Lancet style */
     text-transform: uppercase;
-    letter-spacing: 1.25px;
-    transition: transform 0.3s ease-in-out;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease-in-out font-weight 0.3s ease-in-out;
 }
 
 nav.menu-links a:hover {
     transform: scale(1.05);
+    font-weight: bold;
 }
 
 .nav-right {
@@ -83,8 +85,8 @@ nav.menu-links a:hover {
 }
 
 .btn-red {
-    background-color: #ffffff;
-    color: rgb(1, 43, 107);
+    background-color: #4e87df;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 22px;
     font-size: 1.5rem;
@@ -144,9 +146,7 @@ nav.menu-links a:hover {
     position: relative;
     text-align: center;
     padding-top: 80px;
-    background-color: #d3d7ee;
-    background-size: 120px 120px, 40px 40px, 40px 40px;
-    background-position: 0 0, 0 0, 0 0;
+    background-color: #ffffff; /* Theme background */
 }
 
 .cover-content {
@@ -157,22 +157,9 @@ nav.menu-links a:hover {
     align-items: center;
 }
 
-/* Elegant icon header placement */
 .cover-icon {
     margin-bottom: 25px;
     opacity: 0.85;
-    animation: fadeInIcon 1.5s ease-out;
-}
-
-.cover-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: #C3203B; /* Crimson red accent */
-    text-transform: uppercase;
-    letter-spacing: 5px; /* Clean letter spacing */
-    display: block;
-    margin-bottom: 15px;
 }
 
 .cover-title {
@@ -186,13 +173,11 @@ nav.menu-links a:hover {
     margin-bottom: 25px;
 }
 
-/* Brand cohesive dual-accent line */
 .title-divider {
-    width: 100px;
+    width: 1000px;
     height: 3px;
-    background: linear-gradient(to right, #007A87 40%, #C3203B 40%, #C3203B 55%, #007A87 55%);
+    background: #007A87;
     margin-bottom: 30px;
-    border-radius: 2px;
 }
 
 .cover-institution {
@@ -210,347 +195,38 @@ nav.menu-links a:hover {
     to { opacity: 0.85; transform: translateY(0); }
 }
 
-/* 2. INTERACTIVE SYSTEM CONTAINER */
+/* 2. SCROLLING IMAGE SECTIONS */
 .stage-section-wrapper {
-    min-height: 100vh;
     width: 100%;
-    position: relative;
-    background-color: #d3d7ee;
+    background-color: #f1f3ff; /* Keeps section background consistent with Cover */
 }
 
-.stage-container {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Slide Section layers inside the stage container */
+/* Standard vertically stacked slide container */
 .slide-section {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh; /* Ensures each image takes up a full screen height */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d3d7ee;
-    /* REMOVED top padding so image occupies the absolute full screen */
-    padding-top: 0; 
-    opacity: 0;
-    visibility: hidden;
-    /* Clean "Camera Lens Zoom" timing function */
-    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
-                visibility 0.65s;
-    z-index: 1;
+    position: relative;
+    padding-top: 80px; /* Offset for the fixed header */
+    padding-bottom: 20px;
 }
 
-/* Active State (settles into focus) */
-.slide-section.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    z-index: 10;
-}
-
-/* Zoomed Out State (Slide 1 shrinks back when detailed slides pop out) */
-.slide-section.zoomed-out {
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.92);
-    z-index: 1;
-}
-
-/* Detail Slides zoom from a slightly larger scale (1.08) downwards into focus */
-.detail-slide {
-    transform: scale(1.08);
-}
-
-/* Standard slide images changed to take up entire space */
+/* Standard slide images changed to take up entire space with safety limits to prevent cutting */
 .bg-image {
-    width: 100vw;
-    height: 95.75vh;
+    width: 92vw;
+    height: 82vh; /* Restricted height prevents overlap on different aspect ratios */
+    object-fit: contain; /* Prevents image distortion */
     display: block;
-}
-
-/* Responsive Image Wrapper (Stretched to take up entire screen space) */
-.image-wrapper {
-    position: relative;
-    width: 100vw;
-    height: 95.75vh;
-    z-index: 1;
-    margin: 0 auto;
-    container-type: both; /* Sets up container queries for automatic element-scaling */
-}
-
-/* Full space image content */
-.bg-image-content {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Takes up the entire screen space */
-    border-radius: 0; /* Clears corner borders for a true full bleed background */
-}
-
-/* Dynamic Live HTML Overlay (Coordinates locked directly to the aspect ratio container) */
-.slide-text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Added top padding to push text content down below the 80px fixed header */
-    padding: 110px 5cqw 4.5cqh 5cqw; 
-    z-index: 5;
-    pointer-events: none; /* Allows click events to slide through to child elements */
-}
-
-/* Left-Aligned Title Header inside Slide 1 */
-.overlay-header {
-    text-align: left;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns contents explicitly to the left side */
-    padding-left: 2cqw; /* Clean margin from left border */
-    max-width: 65cqw; /* Constrains text width to the left side of the graphic */
-}
-
-.overlay-header h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 4.5cqw; /* Fluid responsive font sizing */
-    color: #1a1a1a;
-    line-height: 1.15;
-    margin-bottom: 1.5cqh;
-    letter-spacing: -0.5px;
-}
-
-.overlay-header p {
-    font-size: 1.5cqw;
-    max-width: 58cqw;
-    line-height: 1.5;
-    color: #444444;
-    font-weight: 500;
-}
-
-/* Centered Row with Responsive Horizontal Gap */
-.overlay-cards-row {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centers the cards horizontally */
-    gap: 6cqw; /* Generous, scalable spacing between centered cards */
-    width: 100%;
-}
-
-/* Constrained Responsive Card Sizing */
-.overlay-card {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 12px;
-    width: 26cqw; /* Decreased card width (was 32cqw) */
-    height: 38cqh; /* Proportionally adjusted card height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2.5cqw;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-    pointer-events: auto;
-    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
-                background-color 0.45s ease, 
-                border-color 0.45s ease, 
-                box-shadow 0.45s ease;
-}
-
-.overlay-card:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.85);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
-}
-
-/* New Horizontal Row container holding Icon and Title */
-.card-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2cqw; /* Spacing between the icon and title text */
-    width: 100%;
-    margin-bottom: 1.5cqh; /* Spacing between header row and underline */
-}
-
-.card-icon-circle {
-    width: 3cqw; /* Adjusted proportional dimensions */
-    height: 3cqw;
-    border-radius: 50%;
-    background-color: rgba(0, 122, 135, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background-color 0.3s ease;
-}
-
-.overlay-card:hover .card-icon-circle {
-    background-color: rgba(0, 122, 135, 0.15);
-}
-
-.card-icon-circle svg {
-    width: 50%;
-    height: 50%;
-}
-
-.overlay-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.75cqw;
-    font-weight: 700;
-    color: #007A87;
-    margin: 0; /* Clears bottom margin to align perfectly with the icon */
-    line-height: 1;
-}
-
-.card-underline {
-    width: 2.5cqw;
-    height: 3px;
-    background-color: #007A87;
-    margin-bottom: 2cqh; /* Spacing between underline and description paragraph */
-}
-
-.overlay-card p {
-    font-size: 1.05cqw;
-    font-weight: 600;
-    line-height: 1.4;
-    color: #333333;
-}
-
-/* Left-Aligned Bullet Row footer overlay layout */
-.overlay-bullets-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Anchors bullets to the left side */
-    width: 100%;
-    gap: 1.5cqw;
-    padding-left: 2cqw; /* Matches header and cards left alignment */
-}
-
-.bullet-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5cqw;
-    font-size: 1.2cqw;
-    font-weight: 600;
-    color: #444444;
-}
-
-.bullet-icon {
-    font-size: 1.4cqw;
-}
-
-.bullet-divider {
-    width: 1px;
-    height: 12px;
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-/* Premium Floating Back Button inside Slides 2 & 3 */
-.btn-back {
-    position: absolute;
-    top: 110px;
-    left: 50px;
-    z-index: 100;
-    background-color: rgb(0, 0, 0);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    padding: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-back:hover {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #000000;
-    transform: translateX(-4px);
-    box-shadow: 0 6px 20px rgba(195, 32, 59, 0.2);
-}
-
-/* Floating Scroll-down Indicator Mouse and Arrow */
-.scroll-cue {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.scroll-mouse {
-    width: 22px;
-    height: 36px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    position: relative;
-    display: block;
-}
-
-.scroll-wheel {
-    width: 4px;
-    height: 8px;
-    background-color: #C3203B;
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollScroll 1.8s infinite ease-in-out;
-}
-
-.scroll-arrow {
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    transform: rotate(45deg);
-    animation: bounceArrow 1.8s infinite ease-in-out;
-}
-
-/* Keyframes for animations */
-@keyframes scrollScroll {
-    0% { opacity: 1; top: 6px; }
-    50% { opacity: 0.3; top: 16px; }
-    100% { opacity: 1; top: 6px; }
-}
-
-@keyframes bounceArrow {
-    0%, 100% { transform: translateY(0) rotate(45deg); }
-    50% { transform: translateY(6px) rotate(45deg); }
+    margin: 50px auto 0 auto; /* Offsets to account for header top-gap */
+    border-radius: 4px; /* Slightly softens the image corners */
 }
 
 /* Footer Container sitting naturally at the absolute end of the scroll flow */
 footer {
     width: 100%;
-    background-color: rgb(1, 43, 107); /* Light grey backdrop to isolate footer content */
+    background-color: #4e87df; /* Lancet deep blue theme background */
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 60px 50px 30px 50px;
     z-index: 10;
@@ -568,17 +244,16 @@ footer {
 .footer-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content: center; /* Centers the content block horizontally */
     width: 100%;
 }
 
-/* Left Column: Contact Details */
+/* Centered Contact Details */
 .footer-contact {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center; /* Centers elements vertically */
+    text-align: center; /* Centers text strings */
 }
 
 .footer-contact h3 {
@@ -586,7 +261,6 @@ footer {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
-    letter-spacing: -0.3px;
 }
 
 .footer-contact .org-name {
@@ -608,6 +282,7 @@ footer {
     font-weight: 600;
     display: flex;
     align-items: center;
+    justify-content: center; /* Keeps the icon and email centered together */
     gap: 8px;
 }
 
@@ -623,20 +298,6 @@ footer {
 
 .footer-contact .email-icon {
     color: #ffffff;
-}
-
-/* Right Column: Google Map Container */
-.footer-map {
-    width: 600px;
-    height: 220px;
-    flex-shrink: 0;
-}
-
-.map-wrapper {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 /* Bottom Centered Copyright Bar */
@@ -678,84 +339,10 @@ footer {
         padding: 140px 20px 40px 20px;
     }
 
-    .cover-section {
-        padding: 160px 20px 40px 20px;
-    }
-
-    .cover-title {
-        font-size: 2.2rem;
-    }
-
-    .cover-institution {
-        font-size: 1.1rem;
-    }
-
-    .bg-image, .bg-image-content {
-        width: 100%;
+    .bg-image {
+        width: 90vw;
         height: auto;
         max-height: 70vh;
-    }
-
-    /* Target overlay elements to stack cleanly on small smartphone screens */
-    .overlay-cards-row {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .overlay-card {
-        width: 85% !important;
-        height: auto !important;
-        padding: 25px !important;
-    }
-
-    .card-header-row {
-        gap: 12px !important;
-    }
-
-    .card-icon-circle {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    .overlay-card h3 {
-        font-size: 1.15rem !important;
-    }
-
-    .overlay-card p {
-        font-size: 0.85rem !important;
-    }
-
-    .overlay-header h2 {
-        font-size: 1.8rem !important;
-        text-align: center;
-    }
-
-    .overlay-header p {
-        font-size: 0.9rem !important;
-        text-align: center;
-        max-width: 100% !important;
-    }
-
-    .overlay-bullets-row {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px !important;
-    }
-
-    .bullet-item {
-        font-size: 0.85rem !important;
-    }
-
-    .bullet-divider {
-        display: none; /* Hide dividers when wrapping items vertically */
-    }
-
-    .btn-back {
-        top: 160px;
-        left: 20px;
-        font-size: 0.75rem;
-        padding: 8px 16px;
     }
 
     .scroll-nav {
@@ -768,12 +355,177 @@ footer {
 
     .footer-row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 30px;
     }
+}
 
-    .footer-map {
-        width: 100%;
-        height: 180px;
+/* =========================================================
+   GLOBAL SUBPAGE LAYOUT (For non-scrolling pages)
+   ========================================================= */
+body.subpage-body {
+    overflow-y: auto !important; 
+    height: auto !important;
+    background-color: #ffffff;
+}
+
+.subpage-wrapper {
+    padding-top: 80px; /* Pushes content down below the fixed header */
+    min-height: calc(100vh - 300px); 
+}
+
+/* =========================================================
+   EXPERTS SECTION (Style sheet definitions)
+   ========================================================= */
+.experts-section {
+    width: 100%;
+    padding: 100px 40px;
+    background-color: #ffffff; 
+}
+
+.experts-section.alt-bg {
+    background-color: #f7f9fc; /* Slight grey-blue background for the second section */
+}
+
+.experts-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: rgb(1, 43, 107);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.title-divider-small {
+    width: 60px;
+    height: 4px;
+    background-color: #DF5D3F;
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: #555555;
+    font-weight: 500;
+}
+
+/* Responsive CSS Grid */
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Automatically forms clean columns */
+    gap: 40px;
+    width: 100%;
+}
+
+/* Expert Card Styling */
+.expert-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.expert-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(1, 43, 107, 0.2);
+    box-shadow: 0 15px 35px rgba(1, 43, 107, 0.08);
+}
+
+/* Grayscale to Color Photo Hover Effect */
+.expert-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 25px;
+    background-color: #eaeaea;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.expert-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Makes photo black & white by default */
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.expert-card:hover .expert-photo img {
+    filter: grayscale(0%); /* Restores color on hover */
+    transform: scale(1.08); /* Slight zoom inside the circle */
+}
+
+/* Expert Text Typography */
+.expert-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.expert-dept {
+    font-size: 0.95rem;
+    color: #444444;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.expert-inst {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-bottom: 20px;
+}
+
+.expert-link {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #007A87;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    display: inline-block;
+    padding-top: 10px;
+    border-top: 1px solid #eaeaea;
+    width: 100%;
+}
+
+.expert-card:hover .expert-link {
+    color: #DF5D3F;
+}
+
+/* Mobile Responsiveness for Experts Page */
+@media screen and (max-width: 768px) {
+    .experts-section {
+        padding: 60px 20px;
+    }
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    .experts-grid {
+        grid-template-columns: 1fr; /* Stacks cards vertically on phones */
     }
 }

@@ -191,7 +191,7 @@ nav.menu-links a:hover {
     width: 100vw; /* Spans the entire screen width */
     
     /* MATHEMATICAL LOCK: Forces the patch height to match the contained images on ALL screens */
-    height: min(82vh, calc(92vw / 1.48)); /* 1.48 is the exact aspect ratio of your slides */
+    height: min(82vh, calc(92vw / 1.5)); /* 1.5 = actual 1536x1024 image aspect ratio */
     
     z-index: 0; /* Sits behind the image and text overlays */
     pointer-events: none;
@@ -249,7 +249,7 @@ nav.menu-links a:hover {
     position: relative;
     width: min(95vw, calc(88vh * 1.48));
     height: min(88vh, calc(95vw / 1.48));
-    aspect-ratio: 1014 / 685;
+    aspect-ratio: 1536 / 1024;
     z-index: 1; /* Sits above the background patch */
     margin: 0 auto;
     container-type: both;

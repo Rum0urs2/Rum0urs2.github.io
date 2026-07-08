@@ -15,23 +15,35 @@
 </head>
 <body>
 
-    <!-- Fixed Header Navigation (Lancet style) -->
-    <header>
+    <!-- Fixed Header Navigation (Standard Mobile-Responsive Header) -->
+    <header id="main-header">
         <div class="nav-left">
-            <!-- Concentric SVG Logo populated with brand colors -->
+            <!-- Concentric SVG Logo -->
             <svg class="header-logo" viewBox="0 0 100 100">
             </svg>
             <div class="lang-selector"></div>
         </div>
 
-        <nav class="menu-links">
-            <a href="#cover" class="nav-home">Home</a>
-            <a href="#">Why We Exist</a>
-            <a href="#">Research</a>
-            <a href="#">Impact</a>
-            <a href="#">Publications</a>
-            <a href="experts.html">Experts</a>
-            <a href="#contact" class="nav-contact">Contact</a>
+        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="menu-links" id="menuLinks">
+            <a href="#cover" class="nav-link nav-home">Home</a>
+            <a href="#" class="nav-link">Why We Exist</a>
+            <a href="#" class="nav-link">Research</a>
+            <a href="#" class="nav-link">Impact</a>
+            <a href="#" class="nav-link">Publications</a>
+            <a href="experts.html" class="nav-link">Experts</a>
+            <a href="#contact" class="nav-link nav-contact">Contact</a>
+            
+            <!-- Red Button wrapped inside menu links for standard mobile display -->
+            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
+                <button class="btn-red">IIT Delhi</button>
+            </a>
         </nav>
 
         <div class="nav-right">
@@ -66,7 +78,7 @@
                 <!-- Loads the fast, compressed WebP first -->
                 <source srcset="Images/Front_Page/Coe_page-0001.webp" type="image/webp">
                 <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0001.png" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
+                <img src="Images/Front_Page/Coe_page-0001_2.png" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
             </picture>
         </section>
 
@@ -76,7 +88,7 @@
                 <!-- Loads the fast, compressed WebP first -->
                 <source srcset="Images/Front_Page/Coe_page-0002.webp" type="image/webp">
                 <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0002.png" alt="Climate Discovery Detail" class="bg-image">
+                <img src="Images/Front_Page/Coe_page-0002_3.png" alt="Climate Discovery Detail" class="bg-image">
             </picture>
         </section>
 
@@ -86,7 +98,7 @@
                 <!-- Loads the fast, compressed WebP first -->
                 <source srcset="Images/Front_Page/Coe_page-0003.webp" type="image/webp">
                 <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0003.png" alt="Climate Foresight Detail" class="bg-image">
+                <img src="Images/Front_Page/Coe_page-0003_3.png" alt="Climate Foresight Detail" class="bg-image">
             </picture>
         </section>
 
@@ -164,7 +176,25 @@
                     }
                 });
             });
+            
+            // 6. Mobile Hamburger Toggle Handler
+            const mainHeader = document.getElementById('main-header');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelectorAll('.menu-links .nav-link');
+
+            // Toggle menu open/close
+            menuToggle.addEventListener('click', () => {
+                mainHeader.classList.toggle('nav-active');
+            });
+
+            // Close menu automatically when any navigation link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainHeader.classList.remove('nav-active');
+                });
+            });
         });
     </script>
+    
 </body>
 </html>

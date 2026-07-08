@@ -183,13 +183,16 @@ nav.menu-links a:hover {
     padding-bottom: 20px;
 }
 
-/* 2. Master Background Patch (Shared structural rules) */
+/* 2. Master Background Patch (Using dynamic aspect-ratio matching formulas) */
 .slide-section::before {
     content: '';
     position: absolute;
     left: 0;
     width: 100vw; /* Spans the entire screen width */
-    height: 82vh; /* MATCHES IMAGE HEIGHT: Set to 82vh to align perfectly with your images */
+    
+    /* MATHEMATICAL LOCK: Forces the patch height to match the contained images on ALL screens */
+    height: min(82vh, calc(92vw / 1.48)); /* 1.48 is the exact aspect ratio of your slides */
+    
     z-index: 0; /* Sits behind the image and text overlays */
     pointer-events: none;
 }
@@ -203,7 +206,7 @@ nav.menu-links a:hover {
 }
 
 #slide-discovery::before {
-    background: linear-gradient(90deg, #f9fbfc 0%, #0c3879 100%);
+    background: linear-gradient(90deg, #f9fbfc 0%, #588bbe 100%);
 }
 
 #slide-foresight::before {
@@ -215,15 +218,15 @@ nav.menu-links a:hover {
    ========================================== */
 
 #slide-overview::before {
-    background: linear-gradient(90deg, #cee4f8 50%, #0a396d 50%);
+    background: linear-gradient(90deg, #f1f5fc 50%, #f1f5fc 50%);
 }
 
 #slide-discovery::before {
-    background: linear-gradient(90deg, #f9fbfc 50%, #0c3879 50%);
+    background: linear-gradient(90deg, #f0f4fb 50%, #0f3c79 50%);
 }
 
 #slide-foresight::before {
-    background: linear-gradient(90deg, #f1f6fa 50%, #001537 50%);
+    background: linear-gradient(90deg, #f3f5f9 50%, #001537 50%);
 }
 
 /* ==========================================
@@ -340,33 +343,138 @@ footer {
     font-weight: 500;
 }
 
-/* Responsive media query overrides for tablet and mobile devices */
+/* Hide mobile drawer assets on desktop screen sizes */
+.menu-toggle,
+.mobile-only-btn {
+    display: none;
+}
+
+/* Standard Responsive Mobile Header Overrides */
 @media screen and (max-width: 1024px) {
+    /* Header stays a thin horizontal bar on mobile */
     header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-        gap: 15px;
+        height: 80px;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(78, 135, 223);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 
+    /* Displays the standard Hamburger Button */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001; /* Ensure trigger sits above everything */
+        padding: 0;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Morph hamburger lines into an 'X' close button when menu is active */
+    header.nav-active .hamburger-line:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+    header.nav-active .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    header.nav-active .hamburger-line:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Slide-down mobile navigation panel */
     nav.menu-links {
-        flex-wrap: wrap;
+        position: fixed;
+        top: 80px; /* Sits directly below the header bar */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px); /* Fills rest of screen */
+        background-color: rgb(78, 135, 223);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 30px !important;
+        transform: translateY(-100%); /* Slides down from top when toggled */
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+        z-index: 999;
+        padding-bottom: 40px;
+    }
+
+    /* Reveal the mobile navigation links on active trigger */
+    header.nav-active nav.menu-links {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     nav.menu-links a {
-        font-size: 1rem;
+        font-size: 1.3rem; /* Highly legible on smaller screens */
         letter-spacing: 1px;
     }
 
-    .btn-red {
-        font-size: 1rem;
+    /* Displays the red button nicely inside the mobile layout */
+    .mobile-only-btn {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .mobile-only-btn .btn-red {
+        background-color: rgb(78, 135, 223);
+        color: #ffffff;
+        font-size: 1.3rem;
+        padding: 12px 30px;
+    }
+
+    /* Hide standard right nav button on mobile to prevent double actions */
+    .nav-right {
+        display: none;
+    }
+
+    /* Layout paddings so content clears the fixed mobile header bar */
+    .cover-section {
+        padding: 120px 20px 40px 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .cover-title {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .cover-institution {
+        font-size: 1.15rem;
+    }
+
+    .title-divider {
+        width: 120px;
+        max-width: 80%;
     }
 
     .slide-section {
         min-height: auto;
-        padding: 140px 20px 40px 20px;
+        padding: 100px 20px 40px 20px;
     }
 
     .bg-image {
@@ -376,7 +484,7 @@ footer {
     }
 
     .scroll-nav {
-        display: none; /* Hide floating navigation on small screens */
+        display: none; /* Hide floating navigation dots on mobile */
     }
 
     footer {
@@ -387,6 +495,25 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+    }
+}
+
+/* Extra safety check for very small phone screens (e.g. under 480px width) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+    }
+    
+    nav.menu-links {
+        gap: 8px;
+    }
+    
+    nav.menu-links a {
+        font-size: 0.85rem;
+    }
+    
+    .cover-title {
+        font-size: 1.8rem;
     }
 }
 

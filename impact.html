@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DST Centre of Excellence for Climate Information</title>
+    <title>Impacts | DST Centre of Excellence for Climate Information</title>
     
     <!-- Link to external style sheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preloads the full vertical infographic to prevent loading reflow delays -->
+    <link rel="preload" as="image" href="Images/Impact/IMPACTS.webp" type="image/webp">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body class="state-overview">
+<body class="subpage-body">
 
-    <!-- Fixed Header Navigation (Lancet style) -->
-    <header>
+    <!-- Fixed Header Navigation (Lancet style - Deep Blue) -->
+    <header id="main-header">
         <div class="nav-left">
             <!-- Concentric SVG Logo -->
             <svg class="header-logo" viewBox="0 0 100 100">
@@ -24,14 +27,26 @@
             <div class="lang-selector"></div>
         </div>
 
-        <nav class="menu-links">
-            <a href="#cover" class="nav-home">Home</a>
-            <a href="#">Why We Exist</a>
-            <a href="#">Research</a>
-            <a href="#">Impact</a>
-            <a href="#">Publications</a>
-            <a href="#">Experts</a>
-            <a href="#contact" class="nav-contact">Contact</a>
+        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="menu-links" id="menuLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="whyweexist.html">Why We Exist</a>
+            <a href="research.html" class="nav-link">Research</a>
+            <a href="impact.html" class="nav-link">Impact</a>
+            <a href="publications.html" class="nav-link">Publications</a>
+            <a href="experts.html" class="nav-link">Experts</a>
+            <a href="ourstory.html" class="nav-link">Our Story</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            
+            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
+                <button class="btn-red">IIT Delhi</button>
+            </a>
         </nav>
 
         <div class="nav-right">
@@ -39,134 +54,26 @@
         </div>
     </header>
 
+    <!-- MAIN INFOGRAPHIC STAGE (Scrolls vertically) -->
+    <main class="stage-section-wrapper" id="stage-section">
+        
+        <!-- Slide Section 1: Overview Image -->
+        <section class="slide-section" id="slide-overview">
+            <picture>
+                <!-- Loads the fast, compressed WebP first -->
+                <source srcset="Images/Impact/IMPACTS.webp" type="image/webp">
+                <!-- Falls back to PNG if WebP is not supported by the browser -->
+                <img src="Images/Impact/IMPACTS.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
+            </picture>
+        </section>
+    </main>
 
-    <!-- 1. PLAIN INTRO COVER SECTION -->
-    <section class="cover-section" id="cover">
-        <div class="cover-content">
-            <!-- Subtle, elegant academic globe/compass vector -->
-            <div class="cover-icon">
-                <svg viewBox="0 0 24 24" width="36" height="36" stroke="#007A87" stroke-width="1.5" fill="none">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    <path d="M2 12h20"></path>
-                </svg>
-            </div>
-            
-            <h1 class="cover-title">DST Centre of Excellence for Climate Information</h1>
-            <div class="title-divider"></div>
-            <p class="cover-institution">Indian Institute of Technology Delhi</p>
-        </div>
-    </section>
-
-    <!-- 2. INTERACTIVE IMAGE SYSTEM STAGE (Scroll Section 2) -->
-    <section class="stage-section-wrapper" id="stage-section">
-        <div class="stage-container">
-            
-            <!-- Slide 1: Main Overview (Coded with Live HTML/CSS Overlay) -->
-            <div class="slide-section active" id="slide-overview">
-                <div class="image-wrapper">
-                    <!-- Clean, text-less Slide 1 image background -->
-                    <img src="Images/Front_Page/Coe_page-0001.png" alt="Overview Background" class="bg-image-content">
-                    
-                    <!-- Coded HTML Overlay Layer (Spans 100% of the image wrapper) -->
-                    <div class="slide-text-overlay">
-                        
-                        <!-- 1. Title & Subtitle -->
-                        <div class="overlay-header">
-                            <h2>Where Climate Discovery<br>Meets Climate Foresight</h2>
-                            <p>Built on two pillars of excellence — advancing fundamental climate science and transforming it into actionable foresight for <strong>Climate Actions.</strong></p>
-                        </div>
-                        
-                        <div class="overlay-cards-row">
-                            <!-- Left Card (Climate Discovery Trigger) -->
-                            <div class="overlay-card discovery-trigger" id="card-discovery">
-                                <!-- Grouped Header Row (Icon + Text side-by-side) -->
-                                <div class="card-header-row">
-                                    <div class="card-icon-circle">
-                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#007A87" stroke-width="2.5" fill="none">
-                                            <circle cx="11" cy="11" r="8"></circle>
-                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                                        </svg>
-                                    </div>
-                                    <h3>Climate Discovery</h3>
-                                </div>
-                                <div class="card-underline teal-line"></div>
-                                <p>Question Assumptions,<br>Decode Complexity,<br>Advance Understanding.</p>
-                            </div>
-
-                            <!-- Right Card (Climate Foresight Trigger) -->
-                            <div class="overlay-card foresight-trigger" id="card-foresight">
-                                <!-- Grouped Header Row (Icon + Text side-by-side) -->
-                                <div class="card-header-row">
-                                    <div class="card-icon-circle">
-                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#007A87" stroke-width="2.5" fill="none">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                        </svg>
-                                    </div>
-                                    <h3>Climate Foresight</h3>
-                                </div>
-                                <div class="card-underline teal-line"></div>
-                                <p>Transform science into<br>strategic intelligence.</p>
-                            </div>
-                        </div>
-
-                        <!-- 3. Bottom Row Bullets -->
-                        <div class="overlay-bullets-row">
-                            <div class="bullet-item">
-                                <span class="bullet-icon">🌐</span>
-                                <span>Global Focus</span>
-                            </div>
-                            <div class="bullet-divider"></div>
-                            <div class="bullet-item">
-                                <span class="bullet-icon">👥</span>
-                                <span>Scientific Excellence</span>
-                            </div>
-                            <div class="bullet-divider"></div>
-                            <div class="bullet-item">
-                                <span class="bullet-icon">💡</span>
-                                <span>Innovative Solutions</span>
-                            </div>
-                            <div class="bullet-divider"></div>
-                            <div class="bullet-item">
-                                <span class="bullet-icon">🤝</span>
-                                <span>Collaborative Impact</span>
-                            </div>
-                            <div class="bullet-divider"></div>
-                            <div class="bullet-item">
-                                <span class="bullet-icon">🍃</span>
-                                <span>Sustainable Future</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2: Climate Discovery Detail (Zooms in when triggered) -->
-            <div class="slide-section detail-slide" id="slide-discovery">
-                <button class="btn-back">←</button>
-                <img src="Images/Front_Page/Coe_page-0002.png" alt="Climate Discovery Detail" class="bg-image">
-            </div>
-
-            <!-- Slide 3: Climate Foresight Detail (Zooms in when triggered) -->
-            <div class="slide-section detail-slide" id="slide-foresight">
-                <button class="btn-back">←</button>
-                <img src="Images/Front_Page/Coe_page-0003.png" alt="Climate Foresight Detail" class="bg-image">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 3. CONTACT FOOTER (Scroll Section 3) -->
+    <!-- 3. CONTACT FOOTER -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-row">
                 
-                <!-- Left Column: Contact Information -->
+                <!-- Centered Contact Information -->
                 <div class="footer-contact">
                     <h3>Contact</h3>
                     <p class="org-name">DST Centre of Excellence for Climate Information</p>
@@ -180,20 +87,6 @@
                     </p>
                 </div>
 
-                <!-- Right Column: Interactive Map -->
-                <div class="footer-map">
-                    <div class="map-wrapper">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.215286280456!2d77.1884803150808!3d28.54686038243927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8560000001%3A0x7707e4e11e3b6a93!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1710150000000!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Centered Copyright Bar -->
@@ -203,77 +96,28 @@
         </div>
     </footer>
 
-    <!-- Interactive State Controller & Scroll spy Script -->
+    <!-- Mobile Hamburger Toggle & Scroll spy Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const overview = document.getElementById('slide-overview');
-            const discovery = document.getElementById('slide-discovery');
-            const foresight = document.getElementById('slide-foresight');
-            
-            const triggerDiscovery = document.querySelector('.discovery-trigger');
-            const triggerForesight = document.querySelector('.foresight-trigger');
-            const backButtons = document.querySelectorAll('.btn-back');
-            const navHome = document.querySelector('.nav-home');
-            const navContact = document.querySelector('.nav-contact');
-            
             const dots = document.querySelectorAll('.scroll-dot');
-            const scrollSections = document.querySelectorAll('.cover-section, .stage-section-wrapper, footer');
+            const navContact = document.querySelector('.nav-contact');
+            const scrollSections = document.querySelectorAll('.about-slide-section, footer');
 
-            // 1. Zoom Transition: Overview -> Discovery
-            triggerDiscovery.addEventListener('click', () => {
-                overview.classList.remove('active');
-                overview.classList.add('zoomed-out');
-                setTimeout(() => {
-                    discovery.classList.add('active');
-                }, 100);
-            });
-
-            // 2. Zoom Transition: Overview -> Foresight
-            triggerForesight.addEventListener('click', () => {
-                overview.classList.remove('active');
-                overview.classList.add('zoomed-out');
-                setTimeout(() => {
-                    foresight.classList.add('active');
-                }, 100);
-            });
-
-            // 3. Reset zoom state back to Overview (Slide 1)
-            function resetToOverview() {
-                discovery.classList.remove('active');
-                foresight.classList.remove('active');
-                setTimeout(() => {
-                    overview.classList.remove('zoomed-out');
-                    overview.classList.add('active');
-                }, 200);
-            }
-
-            backButtons.forEach(btn => btn.addEventListener('click', resetToOverview));
-            navHome.addEventListener('click', (e) => {
-                e.preventDefault();
-                resetToOverview();
-                document.getElementById('cover').scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // Keyboard Escape fallback
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    resetToOverview();
-                }
-            });
-
-            // 4. Dot Click Scroll handler
+            // 1. Smooth scroll dots navigation
             dots.forEach(dot => {
                 dot.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = dot.getAttribute('data-target');
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
                 });
             });
 
-            // 5. Scroll spy dot highlighter
+            navContact.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // 2. Scroll spy dot highlighter
             window.addEventListener('scroll', () => {
                 let current = "";
                 scrollSections.forEach(section => {
@@ -288,6 +132,21 @@
                     if (dot.getAttribute('data-target') === current) {
                         dot.classList.add('active');
                     }
+                });
+            });
+            
+            // 3. Mobile Hamburger Menu Toggle
+            const mainHeader = document.getElementById('main-header');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelectorAll('.menu-links .nav-link');
+
+            menuToggle.addEventListener('click', () => {
+                mainHeader.classList.toggle('nav-active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainHeader.classList.remove('nav-active');
                 });
             });
         });

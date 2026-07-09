@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experts | DST Centre of Excellence</title>
+    <title>Experts | DST Centre of Excellence for Climate Information</title>
     
     <!-- Link to external style sheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preloads the full vertical infographic to prevent loading reflow delays -->
+    <link rel="preload" as="image" href="Images/Experts/EXPERTS.webp" type="image/webp">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,22 +18,35 @@
 </head>
 <body class="subpage-body">
 
-    <!-- Global Header -->
-    <header>
+    <!-- Fixed Header Navigation (Lancet style - Deep Blue) -->
+    <header id="main-header">
         <div class="nav-left">
+            <!-- Concentric SVG Logo -->
             <svg class="header-logo" viewBox="0 0 100 100">
             </svg>
             <div class="lang-selector"></div>
         </div>
 
-        <nav class="menu-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">Why We Exist</a>
-            <a href="research.html">Research</a>
-            <a href="impact.html">Impact</a>
-            <a href="publications.html">Publications</a>
-            <a href="experts.html">Experts</a> <!-- Active state -->
-            <a href="index.html#contact" class="nav-contact">Contact</a>
+        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="menu-links" id="menuLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="whyweexist.html">Why We Exist</a>
+            <a href="research.html" class="nav-link">Research</a>
+            <a href="impact.html" class="nav-link">Impact</a>
+            <a href="publications.html" class="nav-link">Publications</a>
+            <a href="experts.html" class="nav-link">Experts</a>
+            <a href="ourstory.html" class="nav-link">Our Story</a>
+            <a href="#contact" class="nav-link nav-contact">Contact</a>
+            
+            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
+                <button class="btn-red">IIT Delhi</button>
+            </a>
         </nav>
 
         <div class="nav-right">
@@ -38,310 +54,26 @@
         </div>
     </header>
 
-    <main class="subpage-wrapper">
+    <!-- MAIN INFOGRAPHIC STAGE (Scrolls vertically) -->
+    <main class="stage-section-wrapper" id="stage-section">
         
-        <!-- ==========================================
-             1. LEADERSHIP SECTION 
-             ========================================== -->
-        <section class="experts-section" id="leadership">
-            <div class="experts-container">
-                
-                <div class="section-header">
-                    <h2>Leadership</h2>
-                    <div class="title-divider-small"></div>
-                    <p>— Alphabetically —</p>
-                </div>
-
-                <div class="experts-grid">
-                    <!-- Leader 1 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/amitabh.jpg" alt="Amitabh BHATTACHARYA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Amitabh BHATTACHARYA</h4>
-                            <p class="expert-dept">Department of Applied Mechanics</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://sites.google.com/site/amitabhresearch" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 2 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/tanmoy.webp" alt="Tanmoy CHAKRABORTY" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Tanmoy CHAKRABORTY</h4>
-                            <p class="expert-dept">Department of Electrical Engineering</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://tanmoychak.com/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 3 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/vamsi.jpg" alt="Vamsi. K. CHALAMALLA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Vamsi. K. CHALAMALLA</h4>
-                            <p class="expert-dept">Department of Applied Mechanics</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://sites.google.com/site/vkchalama/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 4 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/amlendu_d.jpg" alt="Amlendu K. DUBEY" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Amlendu K. DUBEY</h4>
-                            <p class="expert-dept">Department of Management Studies</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://sites.google.com/view/amlendu/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 5 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/people/saroj.webp" alt="Saroj K. MISHRA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Saroj K. MISHRA</h4>
-                            <p class="expert-dept">Department of Atmospheric Sciences</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://dcecm.iitd.ac.in/skm/website/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 6 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/prashant.jpg" alt="Prashant PALKAR" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Prashant PALKAR</h4>
-                            <p class="expert-dept">Department of Mechanical Engineering</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://mech.iitd.ac.in/faculty-profile/207" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 7 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/panigrahi1.jpg" alt="Bijaya K. PANIGRAHI" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Bijaya K. PANIGRAHI</h4>
-                            <p class="expert-dept">Department of Electrical Engineering</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://ctech.iitd.ac.in/bkpanigrahi.html" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 8 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/mathilis.jpg" alt="Maithili SHARAN" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Maithili SHARAN</h4>
-                            <p class="expert-dept">INSA Senior Scientist</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://web.iitd.ac.in/~mathilis/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 9 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/shaurya.jpg" alt="Shaurya SHRIYAM" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Shaurya SHRIYAM</h4>
-                            <p class="expert-dept">Department of Mechanical Engineering</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://web.iitd.ac.in/~shriyam/index.html" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 10 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/sawan_new1.jpg" alt="Sawan S. SINHA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Sawan S. SINHA</h4>
-                            <p class="expert-dept">Department of Applied Mechanics</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://sites.google.com/view/sawanssinharesearchteaching/home" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Leader 11 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/Amber.webp" alt="Amber SRIVASTAVA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Prof. Amber SRIVASTAVA</h4>
-                            <p class="expert-dept">Department of Mechanical Engineering</p>
-                            <p class="expert-inst">IIT Delhi</p>
-                            <a href="https://asrivastava93.github.io/index.html" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Slide Section 1: Overview Image -->
+        <section class="slide-section" id="slide-overview">
+            <picture>
+                <!-- Loads the fast, compressed WebP first -->
+                <source srcset="Images/Experts/EXPERTS.webp" type="image/webp">
+                <!-- Falls back to PNG if WebP is not supported by the browser -->
+                <img src="Images/Experts/EXPERTS.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
+            </picture>
         </section>
-
-        <!-- ==========================================
-             2. ADVISORY BOARD SECTION 
-             ========================================== -->
-        <section class="experts-section alt-bg" id="advisors">
-            <div class="experts-container">
-                
-                <div class="section-header">
-                    <h2>Advisory Board</h2>
-                    <div class="title-divider-small"></div>
-                    <p>— Alphabetically —</p>
-                </div>
-
-                <div class="experts-grid">
-                    <!-- Advisor 1 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/swadhin_behera.jpg" alt="Swadhin BEHERA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Swadhin BEHERA</h4>
-                            <p class="expert-dept">Director, Application Laboratory</p>
-                            <p class="expert-inst">JAMSTEC, Japan</p>
-                            <a href="https://www.jamstec.go.jp/apl/j/members/behera/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 2 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/skdash.jpg" alt="S. K. DASH" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>S. K. DASH</h4>
-                            <p class="expert-dept">Former Professor</p>
-                            <p class="expert-inst">IIT Delhi, India</p>
-                            <a href="https://web.iitd.ac.in/~skdash/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 3 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/fasullo_john.jpg" alt="John FASULLO" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>John FASULLO</h4>
-                            <p class="expert-dept">Scientist</p>
-                            <p class="expert-inst">NCAR, USA</p>
-                            <a href="https://staff.cgd.ucar.edu/fasullo/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 4 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/Gullies.jpg" alt="Serge GUILLAS" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Serge GUILLAS</h4>
-                            <p class="expert-dept">Professor</p>
-                            <p class="expert-inst">UCL, UK</p>
-                            <a href="http://www.homepages.ucl.ac.uk/~ucaksgu/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 5 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/hoteit.jpg" alt="Ibrahim HOTEIT" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Ibrahim HOTEIT</h4>
-                            <p class="expert-dept">Professor</p>
-                            <p class="expert-inst">KAUST, Saudi Arabia</p>
-                            <a href="https://www.kaust.edu.sa/en/study/faculty/ibrahim-hoteit" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 6 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/kang.webp" alt="In-Sik KANG" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>In-Sik KANG</h4>
-                            <p class="expert-dept">Emeritus Professor</p>
-                            <p class="expert-inst">SNU, South Korea</p>
-                            <a href="#" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 7 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/sukumar.jpg" alt="Sukumar MISHRA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Sukumar MISHRA</h4>
-                            <p class="expert-dept">Director</p>
-                            <p class="expert-inst">IIT Dhanbad, India</p>
-                            <a href="https://iitdabudhabi.ac.ae/smishra" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 8 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/Negi.webp" alt="Susheela NEGI" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Susheela NEGI</h4>
-                            <p class="expert-dept">Scientist</p>
-                            <p class="expert-inst">DST, India</p>
-                            <a href="https://dst.gov.in/whoswho/dr-susheela-negi" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 9 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/balajirajagopalan.webp" alt="Balaji RAJGOPALAN" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Balaji RAJGOPALAN</h4>
-                            <p class="expert-dept">Professor</p>
-                            <p class="expert-inst">University of Colorado Boulder, USA</p>
-                            <a href="https://www.colorado.edu/even/rajagopalan-balaji-0" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 10 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/sandeep.jpg" alt="Sandeep SAHANY" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Sandeep SAHANY</h4>
-                            <p class="expert-dept">Scientist</p>
-                            <p class="expert-inst">CCRS, Singapore</p>
-                            <a href="https://ccrs.weather.gov.sg/sandeep-sahany/" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 11 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/Kalachand.png" alt="Kalachand SAIN" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Kalachand SAIN</h4>
-                            <p class="expert-dept">Former Director</p>
-                            <p class="expert-inst">WIHG, India</p>
-                            <a href="https://www.ngri.res.in/researcher/prof-kalachand-sain.php" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 12 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/frank.jpg" alt="Frank SELTEN" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Frank SELTEN</h4>
-                            <p class="expert-dept">Scientist</p>
-                            <p class="expert-inst">KNMI, Netherlands</p>
-                            <a href="https://www.knmi.nl/over-het-knmi/onze-mensen/frank-selten" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-
-                    <!-- Advisor 13 -->
-                    <div class="expert-card">
-                        <div class="expert-photo"><img src="images/team/tribbia.jpg" alt="Joe TRIBBIA" loading="lazy"></div>
-                        <div class="expert-info">
-                            <h4>Joe TRIBBIA</h4>
-                            <p class="expert-dept">Scientist</p>
-                            <p class="expert-inst">NCAR, USA</p>
-                            <a href="#" target="_blank" class="expert-link">View Profile →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
     </main>
 
-    <!-- Semantic Contact Footer (Global) -->
+    <!-- 3. CONTACT FOOTER -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-row">
+                
+                <!-- Centered Contact Information -->
                 <div class="footer-contact">
                     <h3>Contact</h3>
                     <p class="org-name">DST Centre of Excellence for Climate Information</p>
@@ -354,12 +86,70 @@
                         <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
                     </p>
                 </div>
+
             </div>
+
+            <!-- Centered Copyright Bar -->
             <div class="copyright-bar">
                 &copy; 2026 DST Centre of Excellence for Climate Information, IIT Delhi. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Hamburger Toggle & Scroll spy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dots = document.querySelectorAll('.scroll-dot');
+            const navContact = document.querySelector('.nav-contact');
+            const scrollSections = document.querySelectorAll('.about-slide-section, footer');
+
+            // 1. Smooth scroll dots navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = dot.getAttribute('data-target');
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            navContact.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // 2. Scroll spy dot highlighter
+            window.addEventListener('scroll', () => {
+                let current = "";
+                scrollSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-target') === current) {
+                        dot.classList.add('active');
+                    }
+                });
+            });
+            
+            // 3. Mobile Hamburger Menu Toggle
+            const mainHeader = document.getElementById('main-header');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelectorAll('.menu-links .nav-link');
+
+            menuToggle.addEventListener('click', () => {
+                mainHeader.classList.toggle('nav-active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainHeader.classList.remove('nav-active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -61,17 +61,18 @@ header {
 nav.menu-links {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: clamp(15px, 2.5vw, 50px); /* Changed from 50px to a fluid gap */
 }
 
 nav.menu-links a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 600; /* Bold links matching Lancet style */
+    font-size: 1.35rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: transform 0.3s ease-in-out;
+    white-space: nowrap; /* ADDED: Prevents text from breaking into two lines */
 }
 
 nav.menu-links a:hover {
@@ -98,6 +99,7 @@ nav.menu-links a:hover {
     text-decoration: none;
     letter-spacing: 2px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .btn-red:hover {
@@ -349,9 +351,94 @@ footer {
     display: none;
 }
 
-/* Standard Responsive Mobile Header Overrides */
-@media screen and (max-width: 1024px) {
-    /* Header stays a thin horizontal bar on mobile */
+/* =========================================================
+   GLOBAL SUBPAGE LAYOUT (For non-scrolling pages)
+   ========================================================= */
+body.subpage-body {
+    overflow-y: auto !important; 
+    height: auto !important;
+    background-color: #ffffff;
+}
+
+.subpage-wrapper {
+    padding-top: 80px; /* Pushes content down below the fixed header */
+    min-height: calc(100vh - 300px); 
+}
+
+/* 1. Master Slide Section Container (Relative positioning anchors the background patches) */
+.slide-section-whyweexist {
+    position: relative; /* REQUIRED: Anchors the background patches */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Vertically centers both the image and the patch together */
+    justify-content: center;
+    background-color: #ffffff; /* Page background behind the patches */
+    padding-top: 80px; /* Safe offset for the fixed header */
+    padding-bottom: 20px;
+}
+
+/* 2. Master Background Patch */
+.slide-section-whyweexist::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100vw; 
+    height: 100%; /* CHANGED: Simplified to fill the container perfectly */
+    z-index: 0; 
+    pointer-events: none;
+}
+
+/* ==========================================
+   CUSTOM GRADIENTS (Edit these colors as desired)
+   ========================================== */
+
+/* #slide-overview::before {
+    background: linear-gradient(90deg, #cee4f8 0%, #0a396d 100%);
+}
+
+#slide-discovery::before {
+    background: linear-gradient(90deg, #f9fbfc 0%, #588bbe 100%);
+}
+
+#slide-foresight::before {
+    background: linear-gradient(90deg, #f1f6fa 0%, #001537 100%);
+} */
+
+/* ==========================================
+   CUSTOM SPLIT-COLOR BANDS (Left/Right Split)
+   ========================================== */
+
+#slide-whyweexist::before {
+    background: linear-gradient(90deg, #f1f5fc 50%, #f1f5fc 50%);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (BREAKPOINTS FOR ALL DEVICES)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   TIER 1: Small Desktops & Large Laptops (1251px to 1400px)
+   --------------------------------------------------------- */
+@media screen and (max-width: 1600px) {
+    nav.menu-links {
+        gap: 15px; /* Pulls links closer together to prevent header overflow */
+    }
+    nav.menu-links a {
+        font-size: 1rem; /* Slightly smaller link text */
+    }
+    .btn-red {
+        font-size: 1.05rem;
+        padding: 8px 18px;
+    }
+}
+
+/* ---------------------------------------------------------
+   TIER 2: Tablets & Medium Laptops (769px to 1250px)
+   * Activates the clean mobile menu drawer to prevent crowding *
+   --------------------------------------------------------- */
+@media screen and (max-width: 1250px) {
+    /* Header stays a thin, clean horizontal bar */
     header {
         height: 80px;
         padding: 0 25px;
@@ -376,7 +463,7 @@ footer {
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 1001; /* Ensure trigger sits above everything */
+        z-index: 1001; /* Sits on top of the slide-down menu */
         padding: 0;
     }
 
@@ -388,7 +475,7 @@ footer {
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Morph hamburger lines into an 'X' close button when menu is active */
+    /* Morph hamburger lines into an 'X' close button when active */
     header.nav-active .hamburger-line:nth-child(1) {
         transform: translateY(7.5px) rotate(45deg);
     }
@@ -412,8 +499,8 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px !important;
-        transform: translateY(-100%); /* Slides down from top when toggled */
+        gap: 25px !important;
+        transform: translateY(-100%); /* Hidden off-screen by default */
         opacity: 0;
         visibility: hidden;
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
@@ -429,7 +516,7 @@ footer {
     }
 
     nav.menu-links a {
-        font-size: 1.3rem; /* Highly legible on smaller screens */
+        font-size: 1.25rem; /* Highly legible on smaller screens */
         letter-spacing: 1px;
     }
 
@@ -442,7 +529,7 @@ footer {
     .mobile-only-btn .btn-red {
         background-color: rgb(78, 135, 223);
         color: #ffffff;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         padding: 12px 30px;
     }
 
@@ -472,11 +559,13 @@ footer {
         max-width: 80%;
     }
 
+    /* Adjust slide sections to flow comfortably on small viewports */
     .slide-section {
         min-height: auto;
         padding: 100px 20px 40px 20px;
     }
 
+    /* Resizes full-screen images safely on intermediate devices */
     .bg-image {
         width: 90vw;
         height: auto;
@@ -488,7 +577,7 @@ footer {
     }
 
     footer {
-        padding: 40px 20px 20px 20px;
+        padding: 45px 20px 20px 20px;
     }
 
     .footer-row {
@@ -496,244 +585,113 @@ footer {
         align-items: center;
         gap: 30px;
     }
-}
 
-/* Extra safety check for very small phone screens (e.g. under 480px width) */
-@media screen and (max-width: 480px) {
-    header {
-        padding: 8px 10px;
+    .footer-contact h3 {
+        font-size: 1.75rem;
     }
-    
-    nav.menu-links {
-        gap: 8px;
+
+    .footer-contact .org-name{
+        font-size: 1.5rem; 
     }
-    
-    nav.menu-links a {
-        font-size: 0.85rem;
+
+    .footer-contact .address-lines {
+        font-size: 1.05rem;
     }
-    
-    .cover-title {
-        font-size: 1.8rem;
+
+    .footer-contact .email-line {
+        font-size: 1.25rem;
     }
+
 }
 
-/* =========================================================
-   GLOBAL SUBPAGE LAYOUT (For non-scrolling pages)
-   ========================================================= */
-body.subpage-body {
-    overflow-y: auto !important; 
-    height: auto !important;
-    background-color: #ffffff;
-}
-
-.subpage-wrapper {
-    padding-top: 80px; /* Pushes content down below the fixed header */
-    min-height: calc(100vh - 300px); 
-}
-
-/* =========================================================
-   EXPERTS SECTION (Style sheet definitions)
-   ========================================================= */
-.experts-section {
-    width: 100%;
-    padding: 100px 40px;
-    background-color: #ffffff; 
-}
-
-.experts-section.alt-bg {
-    background-color: #f7f9fc; /* Slight grey-blue background for the second section */
-}
-
-.experts-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Section Header */
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-header h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3.5rem;
-    color: rgb(1, 43, 107);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.title-divider-small {
-    width: 60px;
-    height: 4px;
-    background-color: #DF5D3F;
-    margin: 0 auto 20px auto;
-    border-radius: 2px;
-}
-
-.section-header p {
-    font-size: 1.25rem;
-    color: #555555;
-    font-weight: 500;
-}
-
-/* Responsive CSS Grid */
-.experts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Automatically forms clean columns */
-    gap: 40px;
-    width: 100%;
-}
-
-/* Expert Card Styling */
-.expert-card {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.expert-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(1, 43, 107, 0.2);
-    box-shadow: 0 15px 35px rgba(1, 43, 107, 0.08);
-}
-
-/* Grayscale to Color Photo Hover Effect */
-.expert-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 25px;
-    background-color: #eaeaea;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.expert-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%); /* Makes photo black & white by default */
-    transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-.expert-card:hover .expert-photo img {
-    filter: grayscale(0%); /* Restores color on hover */
-    transform: scale(1.08); /* Slight zoom inside the circle */
-}
-
-/* Expert Text Typography */
-.expert-info h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #111111;
-    margin-bottom: 12px;
-    line-height: 1.3;
-}
-
-.expert-dept {
-    font-size: 0.95rem;
-    color: #444444;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.expert-inst {
-    font-size: 0.9rem;
-    color: #777777;
-    margin-bottom: 20px;
-}
-
-.expert-link {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #007A87;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
-    display: inline-block;
-    padding-top: 10px;
-    border-top: 1px solid #eaeaea;
-    width: 100%;
-}
-
-.expert-card:hover .expert-link {
-    color: #DF5D3F;
-}
-
-/* Mobile Responsiveness for Experts Page */
+/* ---------------------------------------------------------
+   TIER 3: Small Tablets & Portrait Mini-tablets (481px to 768px)
+   --------------------------------------------------------- */
 @media screen and (max-width: 768px) {
+    /* Stack elements on the subpage experts grids vertically */
+    .experts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
     .experts-section {
         padding: 60px 20px;
     }
+
     .section-header h2 {
         font-size: 2.5rem;
     }
-    .experts-grid {
-        grid-template-columns: 1fr; /* Stacks cards vertically on phones */
+
+    .footer-contact h3 {
+        font-size: 1.25rem;
+    }
+
+    .footer-contact .org-name{
+        font-size: 1rem; 
+    }
+
+    .footer-contact .address-lines {
+        font-size: 0.85rem;
+    }
+
+    .footer-contact .email-line {
+        font-size: 1rem;
     }
 }
 
-/* 1. Master Slide Section Container (Relative positioning anchors the background patches) */
-.slide-section-whyweexist {
-    position: relative; /* REQUIRED: Anchors the background patches */
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center; /* Vertically centers both the image and the patch together */
-    justify-content: center;
-    background-color: #ffffff; /* Page background behind the patches */
-    padding-top: 80px; /* Safe offset for the fixed header */
-    padding-bottom: 20px;
-}
-
-/* 2. Master Background Patch (Using dynamic aspect-ratio matching formulas) */
-.slide-section-whyweexist::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100vw; /* Spans the entire screen width */
+/* ---------------------------------------------------------
+   TIER 4: Portrait Smartphones (0px to 480px)
+   --------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0 15px;
+    }
     
-    /* MATHEMATICAL LOCK: Forces the patch height to match the contained images on ALL screens */
-    height: min(82vh, calc(92vw / 1.5)); /* 1.5 = actual 1536x1024 image aspect ratio */
+    /* Extra tight gap to prevent wrapped links from crowding phone displays */
+    nav.menu-links {
+        gap: 15px;
+        padding-bottom: 20px;
+    }
     
-    z-index: 0; /* Sits behind the image and text overlays */
-    pointer-events: none;
-}
+    nav.menu-links a {
+        font-size: 1.1rem;
+    }
 
-/* ==========================================
-   CUSTOM GRADIENTS (Edit these colors as desired)
-   ========================================== */
+    .mobile-only-btn .btn-red {
+        font-size: 1.1rem;
+        padding: 10px 24px;
+    }
+    
+    .cover-title {
+        font-size: 1.8rem; /* Keeps long title string legible on small viewports */
+    }
 
-/* #slide-overview::before {
-    background: linear-gradient(90deg, #cee4f8 0%, #0a396d 100%);
-}
+    .cover-institution {
+        font-size: 1rem;
+    }
 
-#slide-discovery::before {
-    background: linear-gradient(90deg, #f9fbfc 0%, #588bbe 100%);
-}
+    .slide-section {
+        padding: 100px 10px 30px 10px;
+    }
 
-#slide-foresight::before {
-    background: linear-gradient(90deg, #f1f6fa 0%, #001537 100%);
-} */
+    .bg-image {
+        width: 100vw; /* Spans completely edge-to-edge on smartphones */
+        border-radius: 0;
+    }
 
-/* ==========================================
-   CUSTOM SPLIT-COLOR BANDS (Left/Right Split)
-   ========================================== */
+    .footer-contact h3 {
+        font-size: 1rem;
+    }
 
-#slide-whyweexist::before {
-    background: linear-gradient(90deg, #f1f5fc 50%, #f1f5fc 50%);
+    .footer-contact .org-name{
+        font-size: 0.85rem; 
+    }
+
+    .footer-contact .address-lines {
+        font-size: 0.7rem;
+    }
+
+    .footer-contact .email-line {
+        font-size: 0.85rem;
+    }
 }

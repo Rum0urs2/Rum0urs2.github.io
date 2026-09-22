@@ -1,202 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DST Centre of Excellence for Climate Information</title>
-    
-    <!-- Link to external style sheet -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="preload" as="image" href="Images/Front_Page/Coe_page-0003.webp" type="image/webp">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DST Centre of Excellence for Climate Information — IIT Delhi</title>
+<meta name="description" content="Turning climate science into actionable intelligence for a resilient South Asia. DST Centre of Excellence for Climate Information, IIT Delhi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Fixed Header Navigation (Standard Mobile-Responsive Header) -->
-    <header id="main-header">
-        <div class="nav-left">
-            <!-- Concentric SVG Logo -->
-            <svg class="header-logo" viewBox="0 0 100 100">
-            </svg>
-            <div class="lang-selector"></div>
+<header class="site">
+  <div class="shell nav-row">
+    <a class="brand" href="index.html">DST Centre of Excellence for Climate Information
+      <small>Centre for Atmospheric Sciences, IIT Delhi</small>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <!-- simplified, stylized subcontinent silhouette -->
+        <path d="M760,120 L800,180 L790,250 L830,300 L820,370 L780,430 L760,510 L720,560 L690,600 L670,560 L690,500 L660,460 L640,400 L660,340 L640,280 L670,220 L700,170 Z"
+              fill="#16283B" opacity="0.9"/>
+        <!-- wind streamlines -->
+        <g fill="none" stroke="#7FC7AC" stroke-width="1.3" opacity="0.55">
+          <path d="M0,140 C200,100 350,180 520,120 C680,65 850,150 1200,90"/>
+          <path d="M0,220 C220,170 380,260 560,200 C740,140 900,230 1200,170"/>
+          <path d="M0,300 C240,250 400,340 580,280 C760,220 940,310 1200,250"/>
+        </g>
+        <g fill="none" stroke="#C9A25A" stroke-width="1" opacity="0.4">
+          <path d="M0,400 C260,450 420,370 600,420 C780,470 960,390 1200,440"/>
+          <path d="M0,480 C260,530 430,450 610,500 C790,550 970,470 1200,520"/>
+        </g>
+        <g fill="none" stroke="#B23A2E" stroke-width="1" opacity="0.35">
+          <path d="M0,560 C260,600 440,540 620,580 C800,620 970,560 1200,600"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="shell">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">DST Centre of Excellence · IIT Delhi</p>
+          <h1>Better climate decisions begin with better climate understanding.</h1>
+          <p class="lede">We transform climate science into regionally optimized, decision-relevant intelligence for South Asia — closing the gap between what global models say and what the region needs to plan for.</p>
         </div>
-
-        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <nav class="menu-links" id="menuLinks">
-            <a href="#cover" class="nav-link">Home</a>
-            <a href="whyweexist.html">Why We Exist</a>
-            <a href="research.html" class="nav-link">Research</a>
-            <a href="impact.html" class="nav-link">Impact</a>
-            <a href="publications.html" class="nav-link">Publications</a>
-            <a href="experts.html" class="nav-link">Experts</a>
-            <a href="ourstory.html" class="nav-link">Our Story</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            
-            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
-                <button class="btn-red">IIT Delhi</button>
-            </a>
-        </nav>
-
-        <div class="nav-right">
-            <a href="https://home.iitd.ac.in/" target="_blank"><button class="btn-red">IIT Delhi</button></a>
+        <div class="station-readouts">
+          <div class="readout"><div class="v">2017</div><div class="l">Centre established at IIT Delhi</div></div>
+          <div class="readout"><div class="v">50+</div><div class="l">Experts across nine disciplines</div></div>
+          <div class="readout"><div class="v">6</div><div class="l">International collaborating institutions</div></div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <!-- 1. PLAIN INTRO COVER SECTION (Untouched) -->
-    <section class="cover-section" id="cover">
-        <div class="cover-content">
-            <!-- Subtle, elegant academic globe/compass vector -->
-            <div class="cover-icon">
-                <svg viewBox="0 0 24 24" width="36" height="36" stroke="#007A87" stroke-width="1.5" fill="none">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    <path d="M2 12h20"></path>
-                </svg>
-            </div>
-            
-            <h1 class="cover-title">DST Centre of Excellence for Climate Information</h1>
-            <div class="title-divider"></div>
-            <p class="cover-institution">Indian Institute of Technology Delhi</p>
+  <section>
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Why we exist</span></div>
+      <h2 class="title">Climate data isn't climate intelligence</h2>
+      <p class="dek">South Asia faces intensifying heatwaves, erratic rainfall, floods, droughts, and stronger storms. Global climate models are invaluable, but over this region they often show large biases and conflicting projections — too coarse for local planning, with systematic errors and disagreements between models on what's actually coming.</p>
+
+      <div class="row">
+        <div class="row-label">Rising risk</div>
+        <div class="row-body">
+          <p>Millions of lives and livelihoods are at risk, and the decisions made today will shape regional resilience for decades. This isn't a distant scenario — it's a present planning problem.</p>
         </div>
-    </section>
-
-    <!-- 2. SCROLLING IMAGE SECTIONS (Optimized with Responsive <picture> fallbacks) -->
-    <main class="stage-section-wrapper" id="stage-section">
-        
-        <!-- Slide Section 1: Overview Image -->
-        <section class="slide-section" id="slide-overview">
-            <picture>
-                <!-- Loads the fast, compressed WebP first -->
-                <source srcset="Images/Front_Page/Coe_page-0001.webp" type="image/webp">
-                <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0001.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
-            </picture>
-        </section>
-
-        <!-- Slide Section 2: Climate Discovery Image -->
-        <section class="slide-section" id="slide-discovery">
-            <picture>
-                <!-- Loads the fast, compressed WebP first -->
-                <source srcset="Images/Front_Page/Coe_page-0002.webp" type="image/webp">
-                <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0002.webp" alt="Climate Discovery Detail" class="bg-image">
-            </picture>
-        </section>
-
-        <!-- Slide Section 3: Climate Foresight Image -->
-        <section class="slide-section" id="slide-foresight">
-            <picture>
-                <!-- Loads the fast, compressed WebP first -->
-                <source srcset="Images/Front_Page/Coe_page-0003.webp" type="image/webp">
-                <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Front_Page/Coe_page-0003.webp" alt="Climate Foresight Detail" class="bg-image">
-            </picture>
-        </section>
-
-    </main>
-
-    <!-- 3. CONTACT FOOTER -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-row">
-                
-                <!-- Centered Contact Information -->
-                <div class="footer-contact">
-                    <h3>Contact</h3>
-                    <p class="org-name">DST Centre of Excellence for Climate Information</p>
-                    <p class="address-lines">
-                        Block VI, Indian Institute of Technology Delhi<br>
-                        Hauz Khas, New Delhi - 110016, India
-                    </p>
-                    <p class="email-line">
-                        <span class="email-icon">✉</span> 
-                        <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Centered Copyright Bar -->
-            <div class="copyright-bar">
-                &copy; 2026 DST Centre of Excellence for Climate Information, IIT Delhi. All Rights Reserved.
-            </div>
+      </div>
+      <div class="row reverse">
+        <div class="row-label">A resolution gap</div>
+        <div class="row-body">
+          <p>Coarse resolution, persistent biases, and contradictory projections mean raw global model output rarely translates into something a state planner, a farmer, or a hospital administrator can actually use.</p>
         </div>
-    </footer>
+      </div>
+      <div class="row">
+        <div class="row-label">Our answer</div>
+        <div class="row-body">
+          <p>We turn climate science into regionally optimized, decision-relevant intelligence — through high-resolution modeling, AI and analytics, and outputs built for the decision at hand, not just the science behind it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Smooth Scrolling & Scroll spy Dot Highlighter Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dots = document.querySelectorAll('.scroll-dot');
-            const navHome = document.querySelector('.nav-home');
-            const navContact = document.querySelector('.nav-contact');
-            const scrollSections = document.querySelectorAll('.cover-section, .slide-section, footer');
+  <section class="raised">
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Two pillars</span></div>
+      <h2 class="title">Where climate discovery meets climate foresight</h2>
+      <p class="dek">Built on two pillars of excellence — advancing fundamental climate science, and transforming it into actionable foresight for climate action.</p>
+      <div class="simple-grid cols-2" style="margin-top:32px;">
+        <div>
+          <p class="row-label">Climate Discovery</p>
+          <p style="color:var(--ink-soft); margin-top:10px;">Question assumptions, decode complexity, advance understanding. We revisit accepted paradigms and test the foundational assumptions of climate science.</p>
+        </div>
+        <div>
+          <p class="row-label">Climate Foresight</p>
+          <p style="color:var(--ink-soft); margin-top:10px;">From science to strategy, from uncertainty to resilience. We transform climate science into actionable, regionally optimized intelligence for long-term planning.</p>
+        </div>
+      </div>
+      <div style="margin-top:28px;"><a class="link" href="research.html">Read about our research framework</a></div>
+    </div>
+  </section>
 
-            // Smooth scroll navigation dots
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = dot.getAttribute('data-target');
-                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+  <section class="dark">
+    <div class="shell">
+      <p class="pull">Our strength lies in collaboration across disciplines, institutions and borders — delivering credible, actionable climate intelligence for a resilient South Asia and beyond.</p>
+      <div class="station-readouts" style="flex-direction:row; padding:36px 0 0; flex-wrap:wrap; gap:40px;">
+        <div class="readout" style="border:none; padding:0;"><div class="v">50+</div><div class="l ink-soft-dark">Experts</div></div>
+        <div class="readout" style="border:none; padding:0;"><div class="v">6</div><div class="l ink-soft-dark">Intl. collaborators</div></div>
+        <div class="readout" style="border:none; padding:0;"><div class="v">1</div><div class="l ink-soft-dark">Mission</div></div>
+      </div>
+    </div>
+  </section>
 
-            navHome.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.getElementById('cover').scrollIntoView({ behavior: 'smooth' });
-            });
+  <section>
+    <div class="shell">
+      <div class="roster">
+        <a class="roster-item" href="story.html" style="text-decoration:none;">
+          <div class="who">Our Story</div>
+          <div class="what">How the Centre came to be — from Climate Modeling to Climate Information.</div>
+        </a>
+        <a class="roster-item" href="people.html" style="text-decoration:none;">
+          <div class="who">People</div>
+          <div class="what">Leadership, the core scientific team, and our international collaborators.</div>
+        </a>
+        <a class="roster-item" href="impact.html" style="text-decoration:none;">
+          <div class="who">Impact</div>
+          <div class="what">Where our work makes a difference — from agriculture to disaster risk.</div>
+        </a>
+        <a class="roster-item" href="publications.html" style="text-decoration:none;">
+          <div class="who">Publications</div>
+          <div class="what">Landmark contributions in leading journals, from Nature Climate Change to BAMS.</div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            navContact.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            });
+</main>
 
-            // Scroll spy dot highlighter
-            window.addEventListener('scroll', () => {
-                let current = "";
-                scrollSections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) {
-                        current = section.getAttribute('id');
-                    }
-                });
+<footer class="site">
+  <div class="shell" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>DST Centre of Excellence for Climate Information, IIT Delhi</span>
+    <span>Draft site — content pending final sign-off</span>
+  </div>
+</footer>
 
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                    if (dot.getAttribute('data-target') === current) {
-                        dot.classList.add('active');
-                    }
-                });
-            });
-            
-            // 6. Mobile Hamburger Toggle Handler
-            const mainHeader = document.getElementById('main-header');
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.querySelectorAll('.menu-links .nav-link');
-
-            // Toggle menu open/close
-            menuToggle.addEventListener('click', () => {
-                mainHeader.classList.toggle('nav-active');
-            });
-
-            // Close menu automatically when any navigation link is clicked
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mainHeader.classList.remove('nav-active');
-                });
-            });
-        });
-    </script>
-    
 </body>
 </html>

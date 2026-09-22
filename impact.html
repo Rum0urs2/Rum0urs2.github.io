@@ -1,152 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impacts | DST Centre of Excellence for Climate Information</title>
-    
-    <!-- Link to external style sheet -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact — DST Centre of Excellence for Climate Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="subpage-body">
+<body>
 
-    <!-- Fixed Header Navigation (Lancet style - Deep Blue) -->
-    <header id="main-header">
-        <div class="nav-left">
-            <!-- Concentric SVG Logo -->
-            <svg class="header-logo" viewBox="0 0 100 100">
-            </svg>
-            <div class="lang-selector"></div>
-        </div>
+<header class="site">
+  <div class="shell nav-row">
+    <a class="brand" href="index.html">DST Centre of Excellence for Climate Information
+      <small>Centre for Atmospheric Sciences, IIT Delhi</small>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="impact.html" aria-current="page">Impact</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+<main>
 
-        <nav class="menu-links" id="menuLinks">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="whyweexist.html">Why We Exist</a>
-            <a href="research.html" class="nav-link">Research</a>
-            <a href="impact.html" class="nav-link">Impact</a>
-            <a href="publications.html" class="nav-link">Publications</a>
-            <a href="experts.html" class="nav-link">Experts</a>
-            <a href="ourstory.html" class="nav-link">Our Story</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            
-            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
-                <button class="btn-red">IIT Delhi</button>
-            </a>
-        </nav>
+  <section style="padding-top:64px;">
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Our impact</span></div>
+      <h2 class="title" style="max-width:20ch; font-size:clamp(1.9rem,4vw,2.9rem);">Science with purpose. Impact with relevance.</h2>
+      <p class="dek">We translate advanced climate science into credible, actionable climate information that could support informed decisions and resilient development across South Asia.</p>
+      <span class="flag">⚠ Much of this page uses "could" — describing intended impact, not documented outcomes. Carried over as instructed; worth a conscious decision before launch.</span>
+    </div>
+  </section>
 
-        <div class="nav-right">
-            <a href="https://home.iitd.ac.in/" target="_blank"><button class="btn-red">IIT Delhi</button></a>
-        </div>
-    </header>
+  <section class="dark">
+    <div class="shell"><p class="pull">Better climate intelligence could enable better decisions for resilient societies and a sustainable future.</p></div>
+  </section>
 
-    <!-- MAIN INFOGRAPHIC STAGE (Scrolls vertically) -->
-    <main class="stage-section-wrapper" id="stage-section">
-        
-        <!-- Slide Section 1: Overview Image -->
-        <section class="slide-section" id="slide-overview">
-            <picture>
-                <!-- Loads the fast, compressed WebP first -->
-                <source srcset="Images/Impact/IMPACTS.webp" type="image/webp">
-                <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Impact/IMPACTS.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
-            </picture>
-        </section>
-    </main>
+  <section>
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Where our work makes a difference</span></div>
+      <div class="simple-grid cols-3">
+        <div><p class="row-label" style="font-size:1rem;">Agriculture &amp; Food Security</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Climate information could support resilient agriculture, crop planning, and food system strategies.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Water Resources Management</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Better information could help plan for water availability, quality, and efficient use.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Health &amp; Well-being</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Climate insights could inform preparedness for heat, air quality, and other climate-sensitive risks.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Infrastructure Resilience</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Climate intelligence could guide the design, maintenance, and operation of resilient infrastructure.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Disaster Risk Reduction</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Information could support early warning, risk assessment, and preparedness planning.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Environment &amp; Ecosystems</p><p style="color:var(--ink-soft); margin-top:8px; font-size:0.92rem;">Data could support conservation, ecosystem management, and biodiversity protection.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 3. CONTACT FOOTER -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-row">
-                
-                <!-- Centered Contact Information -->
-                <div class="footer-contact">
-                    <h3>Contact</h3>
-                    <p class="org-name">DST Centre of Excellence for Climate Information</p>
-                    <p class="address-lines">
-                        Block VI, Indian Institute of Technology Delhi<br>
-                        Hauz Khas, New Delhi - 110016, India
-                    </p>
-                    <p class="email-line">
-                        <span class="email-icon">✉</span> 
-                        <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
-                    </p>
-                </div>
+  <section class="raised">
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Focus on development planning</span></div>
+      <p class="dek">Our climate information could support development planning across decision horizons of 2 to 30+ years.</p>
+      <div class="row"><div class="row-label">Shorter-term · 2–5 years</div><div class="row-body"><p>Plan for near-term variability and risks.</p></div></div>
+      <div class="row reverse"><div class="row-label">Medium-term · 5–15 years</div><div class="row-body"><p>Strengthen systems and build resilience.</p></div></div>
+      <div class="row"><div class="row-label">Longer-term · 15–30+ years</div><div class="row-body"><p>Shape pathways for a resilient future.</p></div></div>
+    </div>
+  </section>
 
-            </div>
+  <section class="dark">
+    <div class="shell">
+      <div class="kicker"><span class="bar" style="background:#7FC7AC;"></span><span style="color:#7FC7AC;">Our work could make an impact by</span></div>
+      <div class="simple-grid cols-3" style="background:#0F1B2A; border-color:#26384A;">
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Enabling informed choices</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Robust climate information could improve the quality of decisions.</p></div>
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Reducing uncertainty</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Better science and data could reduce uncertainty in projections.</p></div>
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Supporting collaboration</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Partnerships could strengthen regional ownership and co-production.</p></div>
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Building capacity</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Knowledge exchange could empower institutions and future leaders.</p></div>
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Promoting equity</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Information could support equitable and inclusive development.</p></div>
+        <div style="background:#0F1B2A;"><p class="row-label" style="color:var(--paper); font-size:1rem;">Driving resilience</p><p class="ink-soft-dark" style="margin-top:8px; font-size:0.92rem;">Actionable insights could help communities adapt and thrive.</p></div>
+      </div>
+      <p style="margin-top:28px; font-family:var(--serif); font-size:1.1rem;">For a resilient South Asia. For a sustainable tomorrow.</p>
+    </div>
+  </section>
 
-            <!-- Centered Copyright Bar -->
-            <div class="copyright-bar">
-                &copy; 2026 DST Centre of Excellence for Climate Information, IIT Delhi. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+</main>
 
-    <!-- Mobile Hamburger Toggle & Scroll spy Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dots = document.querySelectorAll('.scroll-dot');
-            const navContact = document.querySelector('.nav-contact');
-            const scrollSections = document.querySelectorAll('.about-slide-section, footer');
+<footer class="site">
+  <div class="shell" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>DST Centre of Excellence for Climate Information, IIT Delhi</span>
+    <span>Draft site — content pending final sign-off</span>
+  </div>
+</footer>
 
-            // 1. Smooth scroll dots navigation
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = dot.getAttribute('data-target');
-                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            navContact.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // 2. Scroll spy dot highlighter
-            window.addEventListener('scroll', () => {
-                let current = "";
-                scrollSections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                    if (dot.getAttribute('data-target') === current) {
-                        dot.classList.add('active');
-                    }
-                });
-            });
-            
-            // 3. Mobile Hamburger Menu Toggle
-            const mainHeader = document.getElementById('main-header');
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.querySelectorAll('.menu-links .nav-link');
-
-            menuToggle.addEventListener('click', () => {
-                mainHeader.classList.toggle('nav-active');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mainHeader.classList.remove('nav-active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>

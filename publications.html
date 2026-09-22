@@ -1,152 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | DST Centre of Excellence for Climate Information</title>
-    
-    <!-- Link to external style sheet -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — DST Centre of Excellence for Climate Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="subpage-body">
+<body>
 
-    <!-- Fixed Header Navigation (Lancet style - Deep Blue) -->
-    <header id="main-header">
-        <div class="nav-left">
-            <!-- Concentric SVG Logo -->
-            <svg class="header-logo" viewBox="0 0 100 100">
-            </svg>
-            <div class="lang-selector"></div>
+<header class="site">
+  <div class="shell nav-row">
+    <a class="brand" href="index.html">DST Centre of Excellence for Climate Information
+      <small>Centre for Atmospheric Sciences, IIT Delhi</small>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="publications.html" aria-current="page">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section style="padding-top:64px;">
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Research output</span></div>
+      <h2 class="title" style="max-width:22ch; font-size:clamp(1.9rem,4vw,2.9rem);">Advancing science. Publishing impact.</h2>
+      <p class="dek">Our research challenges long-standing assumptions, advances climate understanding, and develops new frameworks for actionable climate intelligence — published in Nature Climate Change, BAMS, Journal of Climate, Climate Dynamics, and Scientific Reports.</p>
+    </div>
+  </section>
+
+  <section class="raised">
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Featured work</span></div>
+      <h2 class="title">Landmark contributions</h2>
+
+      <div class="pub">
+        <span class="where">Nature Climate Change · 2023</span>
+        <div>
+          <h4>A Need for Actionable Climate Projections Across the Global South</h4>
+          <div class="byline">Saroj K. Mishra et al.</div>
+          <p>Highlights inconsistencies in IPCC projections for vulnerable regions and proposes pathways toward actionable climate information.</p>
         </div>
-
-        <!-- Hamburger Icon (Visible only on mobile/tablets) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <nav class="menu-links" id="menuLinks">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="whyweexist.html">Why We Exist</a>
-            <a href="research.html" class="nav-link">Research</a>
-            <a href="impact.html" class="nav-link">Impact</a>
-            <a href="publications.html" class="nav-link">Publications</a>
-            <a href="experts.html" class="nav-link">Experts</a>
-            <a href="ourstory.html" class="nav-link">Our Story</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            
-            <a href="https://home.iitd.ac.in/" target="_blank" class="mobile-only-btn">
-                <button class="btn-red">IIT Delhi</button>
-            </a>
-        </nav>
-
-        <div class="nav-right">
-            <a href="https://home.iitd.ac.in/" target="_blank"><button class="btn-red">IIT Delhi</button></a>
+      </div>
+      <div class="pub">
+        <span class="where">BAMS · 2025/26</span>
+        <div>
+          <h4>Advancing Climate Services in South Asia: The SARCI Framework for Actionable Climate Information</h4>
+          <div class="byline">Bhuyan et al., with S. K. Mishra</div>
+          <p>Introduces the SARCI framework — a regionally optimized modeling system delivering high-resolution, actionable climate services.</p>
         </div>
-    </header>
-
-    <!-- MAIN INFOGRAPHIC STAGE (Scrolls vertically) -->
-    <main class="stage-section-wrapper" id="stage-section">
-        
-        <!-- Slide Section 1: Overview Image -->
-        <section class="slide-section" id="slide-overview">
-            <picture>
-                <!-- Loads the fast, compressed WebP first -->
-                <source srcset="Images/Publications/PUBLICATIONS.webp" type="image/webp">
-                <!-- Falls back to PNG if WebP is not supported by the browser -->
-                <img src="Images/Publications/PUBLICATIONS.webp" alt="Where Climate Discovery Meets Climate Foresight" class="bg-image">
-            </picture>
-        </section>
-    </main>
-
-    <!-- 3. CONTACT FOOTER -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-row">
-                
-                <!-- Centered Contact Information -->
-                <div class="footer-contact">
-                    <h3>Contact</h3>
-                    <p class="org-name">DST Centre of Excellence for Climate Information</p>
-                    <p class="address-lines">
-                        Block VI, Indian Institute of Technology Delhi<br>
-                        Hauz Khas, New Delhi - 110016, India
-                    </p>
-                    <p class="email-line">
-                        <span class="email-icon">✉</span> 
-                        <a href="mailto:skm@iitd.ac.in">skm@iitd.ac.in</a>
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Centered Copyright Bar -->
-            <div class="copyright-bar">
-                &copy; 2026 DST Centre of Excellence for Climate Information, IIT Delhi. All Rights Reserved.
-            </div>
+      </div>
+      <div class="pub">
+        <span class="where">Journal of Climate · npj Climate and Atmospheric Science · Climate Dynamics · 2018–2024</span>
+        <div>
+          <h4>Key Contributions in Monsoon Dynamics, Modeling, and Projections</h4>
+          <p>Monsoon variability &amp; extremes · Model biases &amp; process understanding · Climate change projections · Regional modeling innovations</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Mobile Hamburger Toggle & Scroll spy Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dots = document.querySelectorAll('.scroll-dot');
-            const navContact = document.querySelector('.nav-contact');
-            const scrollSections = document.querySelectorAll('.about-slide-section, footer');
+  <section>
+    <div class="shell">
+      <div class="kicker"><span class="bar"></span><span>Research portfolio</span></div>
+      <h2 class="title">From discovery to decision-relevant knowledge</h2>
+      <p class="dek">Our publications span a broad portfolio of interconnected themes that address critical climate challenges and enable resilient futures.</p>
+      <div class="simple-grid cols-3" style="margin-top:28px;">
+        <div><p class="row-label" style="font-size:1rem;">Climate Modeling</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Regional and global simulations and model development.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Monsoon Dynamics</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Rainfall, circulation, variability, and extremes.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Climate Projections</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Future scenarios, uncertainty analysis, and risk assessment.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Hydrology &amp; Water</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Hydroclimate processes, water resources, basin-scale risk.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Climate Services</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Actionable climate information and decision support.</p></div>
+        <div><p class="row-label" style="font-size:1rem;">Climate &amp; Health</p><p style="color:var(--ink-soft); margin-top:6px; font-size:0.9rem;">Climate-sensitive diseases and health risk analysis.</p></div>
+      </div>
+      <div style="margin-top:32px;"><a class="btn" href="#">View all publications</a></div>
+      <span class="flag">⚠ Your live site links this button to a real publications.html with a dynamic list — that page wasn't included in what you uploaded, so I couldn't carry its actual entries over here.</span>
+    </div>
+  </section>
 
-            // 1. Smooth scroll dots navigation
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = dot.getAttribute('data-target');
-                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+  <section class="dark">
+    <div class="shell"><p class="pull">Our publications reflect a singular mission: transforming rigorous climate science into credible intelligence for resilient development planning.</p></div>
+  </section>
 
-            navContact.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            });
+</main>
 
-            // 2. Scroll spy dot highlighter
-            window.addEventListener('scroll', () => {
-                let current = "";
-                scrollSections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) {
-                        current = section.getAttribute('id');
-                    }
-                });
+<footer class="site">
+  <div class="shell" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>DST Centre of Excellence for Climate Information, IIT Delhi</span>
+    <span>Draft site — content pending final sign-off</span>
+  </div>
+</footer>
 
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                    if (dot.getAttribute('data-target') === current) {
-                        dot.classList.add('active');
-                    }
-                });
-            });
-            
-            // 3. Mobile Hamburger Menu Toggle
-            const mainHeader = document.getElementById('main-header');
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.querySelectorAll('.menu-links .nav-link');
-
-            menuToggle.addEventListener('click', () => {
-                mainHeader.classList.toggle('nav-active');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mainHeader.classList.remove('nav-active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ a{color:inherit;text-decoration:none}
 .skip:focus{left:8px}
 
 .wrap{max-width:1600px;margin:0 auto;padding-inline:clamp(22px,5.8vw,112px)}
-.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+.mono{font-family:var(--mono);font-size:1rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
 .teal{color:var(--teal)}
 .mute{color:var(--mute)}
 em{font-style:italic;color:var(--teal);font-weight:500}
@@ -103,7 +103,7 @@ nav a.go{color:var(--teal)}
 .sec{padding-block:clamp(72px,11vw,160px);border-bottom:1px solid var(--line)}
 .sec.alt{background:var(--bg-2)}
 .sec-head{display:grid;grid-template-columns:minmax(150px,1fr) 2.4fr;gap:clamp(24px,5vw,80px);align-items:start;margin-bottom:clamp(40px,6vw,80px)}
-.sec-head .lab{font:400 .72rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-top:.9em}
+.sec-head .lab{font:400 1rem var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);padding-top:.9em}
 .sec-head .lab b{color:var(--teal);font-weight:400;margin-right:20px}
 .sec-head .kick{color:var(--teal);margin-bottom:22px}
 .sec-head h2{font:500 clamp(2.1rem,4.6vw,4.1rem)/1.04 var(--serif);letter-spacing:-.02em;max-width:15em}
@@ -121,7 +121,7 @@ nav a.go{color:var(--teal)}
 .stat span{display:block;margin-top:10px;font:400 .66rem/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
 .glance{margin-top:44px;border-top:1px solid var(--line)}
 .glance div{display:grid;grid-template-columns:minmax(90px,150px) 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.glance dt{font:400 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.glance dt{font:400 1rem var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
 .glance dd{color:var(--ink)}
 
 /* body content aligns to the heading column (same grid as .sec-head) */

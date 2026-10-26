@@ -15,7 +15,7 @@
   --sans:'Inter',system-ui,-apple-system,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   --number:'Asap Sharp',sans-serif;
-  --fs-micro:clamp(0.9rem,.2vw + .68rem,1.1rem); /* floor for tiny uppercase labels: ~0.6875rem phone, ~1rem 2560 */
+  --fs-micro:clamp(1rem,.3vw + .68rem,1.2rem); /* floor for tiny uppercase labels: ~0.6875rem phone, ~1rem 2560 */
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
